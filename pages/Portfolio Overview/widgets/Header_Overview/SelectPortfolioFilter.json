@@ -32,24 +32,16 @@
   "optionValue": "value",
   "options": [
     {
-      "label": "All Portfolios",
-      "value": "ALL"
+      "label": "EUR",
+      "value": "EUR"
     },
     {
-      "label": "Main",
-      "value": "Main"
+      "label": "USD",
+      "value": "USD"
     },
     {
-      "label": "Kids Future",
-      "value": "Kids Future"
-    },
-    {
-      "label": "Loan Payoff",
-      "value": "Loan Payoff"
-    },
-    {
-      "label": "Y Balloon",
-      "value": "Y-balloon"
+      "label": "Samarth",
+      "value": "Samarth"
     }
   ],
   "parentId": "cvs_j3p1x9vn",
