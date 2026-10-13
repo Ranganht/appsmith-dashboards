@@ -1,0 +1,27 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_perf_worst3",
+  "parentRowSpace": 10,
+  "rightColumn": 62,
+  "text": "{{ PortfolioUtils.formatPercent(PortfolioUtils.getPerformers().worst[2]?.pct) }}",
+  "textColor": "{{ PortfolioUtils.getPerformers().worst[2]?.color || '#94A3B8' }}",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "pct_perf_worst3",
+  "widgetName": "Pct_Perf_Worst3"
+}

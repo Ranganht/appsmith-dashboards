@@ -98,7 +98,7 @@
     "dynamicBindingPathList": [],
     "name": "GetPortfolioOverview",
     "pageId": "Holdings",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

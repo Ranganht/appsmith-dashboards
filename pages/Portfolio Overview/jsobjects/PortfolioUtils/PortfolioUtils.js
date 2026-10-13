@@ -18,9 +18,14 @@ export default {
     return Number(value) >= 0 ? '#10b981' : '#ef4444';
   },
 
-  // Owner/currency portfolios, e.g. EUR, USD, Samarth.
+  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Combines the summary
+  // doc with the values present in the loaded holdings so the options never
+  // come up short, falling back to the full known set.
   getPortfolioOptions() {
-    const list = GetPortfolioSummary.data?.[0]?.availablePortfolios || ['EUR', 'USD'];
+    const fromSummary = GetPortfolioSummary.data?.[0]?.availablePortfolios || [];
+    const fromRows = this.getHoldings().map(h => h.portfolio).filter(Boolean);
+    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort((a, b) => a.localeCompare(b));
+    const list = seen.length ? seen : ['EUR', 'Samarth', 'USD'];
     const options = [{ label: 'All Portfolios', value: 'ALL' }];
     list.forEach(p => options.push({ label: p, value: p }));
     return options;
@@ -97,19 +102,35 @@ export default {
     }));
   },
 
-  // Donut/Pie Chart: Top 10 Holdings Allocation
-  getAllocationData() {
-    const raw = this.getHoldings();
-    if (!raw || raw.length === 0) return [];
-    return raw.slice(0, 10).map(item => ({
-      x: item.symbol,
-      y: Math.round(item.currentValue || 0)
-    }));
-  },
+  // Best/worst performers for the selected timeframe. The portfolio and asset
+  // class filters are already applied by GetHoldings; the timeframe chooses
+  // which trailing return to rank on ("All Time" compares against cost basis).
+  getPerformers() {
+    const timeframe = (typeof SelectTimeframe !== 'undefined' && SelectTimeframe.selectedOptionValue)
+      ? SelectTimeframe.selectedOptionValue
+      : '1M';
+    const metric = {
+      '1W': 'return1wPct',
+      '1M': 'return1mPct',
+      '1Y': 'return1yPct',
+      'ALL': 'unrealizedPnLPct',
+    }[timeframe] || 'unrealizedPnLPct';
 
-  async refreshAll() {
-    await GetPortfolioSummary.run();
-    await GetHoldings.run();
-    await GetHistory.run();
+    const rows = this.getHoldings().map(row => {
+      let pct = Number(row[metric]);
+      if (isNaN(pct)) pct = Number(row.unrealizedPnLPct) || 0;
+      return {
+        symbol: row.symbol || '—',
+        name: row.name || row.symbol || '',
+        pct: pct,
+        color: pct >= 0 ? '#10b981' : '#ef4444',
+      };
+    }).sort((a, b) => b.pct - a.pct);
+
+    return {
+      timeframe: timeframe,
+      best: rows.slice(0, 3),
+      worst: rows.slice(-3).reverse(),
+    };
   }
 }

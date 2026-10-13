@@ -28,17 +28,27 @@ export default {
     }));
   },
 
-  // Goal (purpose) buckets, e.g. Y-balloon, retirement.
+  // Goal (purpose) buckets, e.g. Y-balloon, education, retirement. Combines the
+  // summary doc with the values present in the loaded holdings so the options
+  // never come up short, falling back to the full known set.
   getGoalOptions() {
-    const list = GetPortfolioOverview.data?.[0]?.availableGoals || ['retirement', 'Y-balloon'];
+    const fromSummary = GetPortfolioOverview.data?.[0]?.availableGoals || [];
+    const fromRows = (GetHoldings.data || []).map(r => r.goal).filter(Boolean);
+    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort();
+    const list = seen.length ? seen : ['Y-balloon', 'education', 'retirement'];
     const options = [{ label: "All Goals", value: "ALL" }];
     list.forEach(g => options.push({ label: g, value: g }));
     return options;
   },
 
-  // Portfolio (owner/currency) buckets, e.g. EUR, USD, Samarth.
+  // Portfolio (owner/currency) buckets, e.g. EUR, USD, Samarth. Combines the
+  // summary doc with the values present in the loaded holdings so the options
+  // never come up short, falling back to the full known set.
   getPortfolioOptions() {
-    const list = GetPortfolioOverview.data?.[0]?.availablePortfolios || ['EUR', 'USD'];
+    const fromSummary = GetPortfolioOverview.data?.[0]?.availablePortfolios || [];
+    const fromRows = (GetHoldings.data || []).map(r => r.portfolio).filter(Boolean);
+    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort((a, b) => a.localeCompare(b));
+    const list = seen.length ? seen : ['EUR', 'Samarth', 'USD'];
     const options = [{ label: "All Portfolios", value: "ALL" }];
     list.forEach(p => options.push({ label: p, value: p }));
     return options;

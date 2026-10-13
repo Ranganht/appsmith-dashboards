@@ -102,7 +102,7 @@
     ],
     "name": "GetHoldings",
     "pageId": "Holdings",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

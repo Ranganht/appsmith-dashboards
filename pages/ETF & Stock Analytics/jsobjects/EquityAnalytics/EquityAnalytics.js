@@ -93,11 +93,5 @@ export default {
     if (!symbol) return 0;
     const matched = this.getHoldings().filter(h => h.symbol === symbol);
     return matched.reduce((s, h) => s + (h.currentValue || 0), 0);
-  },
-
-  async refresh() {
-    await GetEquitiesHoldings.run();
-    await GetTickerPrice.run();
-    await GetTickerTransactions.run();
   }
 }

@@ -1,0 +1,20 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_perf_best1",
+  "parentRowSpace": 10,
+  "rightColumn": 62,
+  "text": "BEST #1",
+  "textColor": "#94A3B8",
+  "topRow": 2,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_perf_best1",
+  "widgetName": "Lbl_Perf_Best1"
+}

@@ -1,0 +1,24 @@
+{
+  "bottomRow": 74,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 46,
+  "text": "Top & Bottom Performers · {{ PortfolioUtils.getPerformers().timeframe }}",
+  "textColor": "#0F172A",
+  "topRow": 70,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_performers",
+  "widgetName": "Title_Performers"
+}
