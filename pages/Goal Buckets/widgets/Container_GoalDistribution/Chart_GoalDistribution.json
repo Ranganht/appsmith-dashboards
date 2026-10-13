@@ -1,0 +1,27 @@
+{
+  "bottomRow": 42,
+  "chartData": {
+    "undefined": {
+      "data": "{{ GoalUtils.getGoalDistributionData() }}",
+      "seriesName": " Goal Distribution"
+    }
+  },
+  "chartName": "Bucket Share",
+  "chartType": "PIE_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.undefined.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_m8luviz4",
+  "rightColumn": 64,
+  "topRow": 6,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_tt4bq4i1",
+  "widgetName": "Chart_GoalDistribution"
+}

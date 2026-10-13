@@ -5,7 +5,7 @@
   "isLoading": false,
   "isVisible": true,
   "leftColumn": 53,
-  "onClick": "{{GetGoalBuckets.run(); GetGoalHoldings.run();}}",
+  "onClick": "{{GetGoalBuckets.run();}}",
   "parentId": "cvs_li76jr6f",
   "rightColumn": 61,
   "text": "🔄 Refresh",

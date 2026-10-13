@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 52,
+  "bottomRow": 40,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartName": "",
   "chartType": "CUSTOM_ECHART",
