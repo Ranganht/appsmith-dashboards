@@ -82,5 +82,72 @@ export default {
     const map = this.getBucketData();
     const goals = Object.keys(map);
     return goals.map(g => ({ x: g, y: Math.round(map[g].val) }));
+  },
+
+  // Hardcoded target amount (in base currency, €) per goal bucket.
+  // Add or edit buckets here to change the gauges. e.g. 'Retirement': 250000
+  getTargets() {
+    return {
+      'Main': 100000,
+      'Y-balloon': 24000,
+    };
+  },
+
+  // One ECharts gauge per bucket, showing % of target achieved.
+  // Each gauge also prints the bucket name and "current / target" beneath it.
+  getGaugeOption() {
+    const targets = this.getTargets();
+    const list = GetGoalBuckets.data || [];
+
+    const byBucket = {};
+    list.forEach(h => {
+      const b = h.portfolio || 'Main';
+      byBucket[b] = (byBucket[b] || 0) + (h.currentValue || 0);
+    });
+
+    const buckets = Object.keys(targets);
+    const count = buckets.length || 1;
+
+    const series = buckets.map((bucket, i) => {
+      const target = targets[bucket] || 0;
+      const current = byBucket[bucket] || 0;
+      const pct = target > 0 ? Math.min(100, (current / target) * 100) : 0;
+      const centerX = Number((((i + 0.5) * 100) / count).toFixed(2));
+
+      return {
+        type: 'gauge',
+        center: [`${centerX}%`, '58%'],
+        radius: '60%',
+        min: 0,
+        max: 100,
+        startAngle: 210,
+        endAngle: -30,
+        splitNumber: 5,
+        progress: { show: true, roundCap: true, width: 14 },
+        axisLine: { lineStyle: { width: 14 } },
+        axisTick: { show: false },
+        splitLine: { length: 6, lineStyle: { width: 1 } },
+        axisLabel: { show: false },
+        pointer: { show: false },
+        anchor: { show: false },
+        title: { offsetCenter: [0, '40%'], fontSize: 13, color: '#0F172A' },
+        detail: {
+          valueAnimation: true,
+          offsetCenter: [0, '8%'],
+          fontSize: 20,
+          fontWeight: 'bolder',
+          formatter: '{value}%',
+          color: '#0F172A',
+        },
+        data: [
+          {
+            value: Math.round(pct * 10) / 10,
+            name: `${bucket}\n${this.formatCurrency(current)} / ${this.formatCurrency(target)}`,
+          },
+        ],
+      };
+    });
+
+    return { series: series };
   }
 }

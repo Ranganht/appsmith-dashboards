@@ -1,0 +1,28 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 52,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "chartName": "",
+  "chartType": "CUSTOM_ECHART",
+  "customEChartConfig": "{{ GoalUtils.getGaugeOption() }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "customEChartConfig"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 17.9375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "topRow": 9,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_goalgauge",
+  "widgetName": "Chart_GoalGauges"
+}
