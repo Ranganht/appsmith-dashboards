@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6ac79e27e96c6c8805944171_f9dd801e-62b7-466c-93af-5d194165321c",
-  "id": "Holdings_HoldingsUtils.getBucketOptions",
+  "gitSyncId": "6ac79e27e96c6c8805944171_85f1349e-5435-444a-a42f-77701c0c426f",
+  "id": "Holdings_HoldingsUtils.getGoalOptions",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "HoldingsUtils.getBucketOptions",
-    "name": "getBucketOptions",
+    "fullyQualifiedName": "HoldingsUtils.getGoalOptions",
+    "name": "getGoalOptions",
     "pageId": "Holdings",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
