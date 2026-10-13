@@ -11,13 +11,18 @@ export default {
     const raw = GetGoalBuckets.data || [];
     const map = {};
     for (const h of raw) {
-      const b = h.portfolio || 'Main';
+      const b = h.goal || 'Unassigned';
       if (!map[b]) map[b] = { val: 0, inv: 0, pnl: 0 };
       map[b].val += (h.currentValue || 0);
       map[b].inv += (h.totalInvested || 0);
       map[b].pnl += (h.unrealizedPnL || 0);
     }
     return map;
+  },
+
+  formatCurrencyWhole(value) {
+    if (value === undefined || value === null || isNaN(Number(value))) return '€0';
+    return '€' + Math.round(Number(value)).toLocaleString('de-DE');
   },
 
   getGoalOptions() {
@@ -85,10 +90,10 @@ export default {
   },
 
   // Hardcoded target amount (in base currency, €) per goal bucket.
-  // Add or edit buckets here to change the gauges. e.g. 'Retirement': 250000
+  // Add or edit buckets here to change the gauges. e.g. 'retirement': 250000
   getTargets() {
     return {
-      'Main': 100000,
+      'retirement': 100000,
       'Y-balloon': 24000,
     };
   },
@@ -101,7 +106,7 @@ export default {
 
     const byBucket = {};
     list.forEach(h => {
-      const b = h.portfolio || 'Main';
+      const b = h.goal || 'Unassigned';
       byBucket[b] = (byBucket[b] || 0) + (h.currentValue || 0);
     });
 
@@ -141,8 +146,8 @@ export default {
         },
         data: [
           {
-            value: Math.round(pct * 10) / 10,
-            name: `${bucket}\n${this.formatCurrency(current)} / ${this.formatCurrency(target)}`,
+            value: Math.round(pct),
+            name: `${bucket}\n${this.formatCurrencyWhole(current)} / ${this.formatCurrencyWhole(target)}`,
           },
         ],
       };

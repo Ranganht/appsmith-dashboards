@@ -18,6 +18,14 @@ export default {
     return Number(value) >= 0 ? '#10b981' : '#ef4444';
   },
 
+  // Owner/currency portfolios, e.g. EUR, USD, Samarth.
+  getPortfolioOptions() {
+    const list = GetPortfolioSummary.data?.[0]?.availablePortfolios || ['EUR', 'USD'];
+    const options = [{ label: 'All Portfolios', value: 'ALL' }];
+    list.forEach(p => options.push({ label: p, value: p }));
+    return options;
+  },
+
   getHoldings() {
     return GetHoldings.data || [];
   },

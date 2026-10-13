@@ -1,0 +1,73 @@
+{
+  "bottomRow": 28,
+  "defaultOptionValue": "retirement",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "optionValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Goal",
+  "leftColumn": 22,
+  "onOptionChange": "",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "retirement",
+      "value": "retirement"
+    },
+    {
+      "label": "Y-balloon",
+      "value": "Y-balloon"
+    }
+  ],
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "Select option",
+  "rightColumn": 44,
+  "serverSideFiltering": false,
+  "sourceData": "{{ Array.from(new Set([\"retirement\",\"Y-balloon\"].concat((GetTransactions.data || []).map(t => t.goal).filter(Boolean)))).map(g => ({ label: g, value: g })) }}",
+  "topRow": 23,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_goalinput1",
+  "widgetName": "SelectGoalInput",
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "boxShadow": "none",
+  "dynamicHeight": "FIXED",
+  "isDisabled": false,
+  "isRequired": false,
+  "key": "goal0input1",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 23,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 12.828125,
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill"
+}

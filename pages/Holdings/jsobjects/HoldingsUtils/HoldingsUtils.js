@@ -7,10 +7,19 @@ export default {
     });
   },
 
-  getBucketOptions() {
-    const list = GetPortfolioOverview.data?.[0]?.availablePortfolios || ['Main', 'Y-balloon'];
-    const options = [{ label: "All Buckets", value: "ALL" }];
-    list.forEach(b => options.push({ label: b, value: b }));
+  // Goal (purpose) buckets, e.g. Y-balloon, retirement.
+  getGoalOptions() {
+    const list = GetPortfolioOverview.data?.[0]?.availableGoals || ['retirement', 'Y-balloon'];
+    const options = [{ label: "All Goals", value: "ALL" }];
+    list.forEach(g => options.push({ label: g, value: g }));
+    return options;
+  },
+
+  // Portfolio (owner/currency) buckets, e.g. EUR, USD, Samarth.
+  getPortfolioOptions() {
+    const list = GetPortfolioOverview.data?.[0]?.availablePortfolios || ['EUR', 'USD'];
+    const options = [{ label: "All Portfolios", value: "ALL" }];
+    list.forEach(p => options.push({ label: p, value: p }));
     return options;
   }
 }

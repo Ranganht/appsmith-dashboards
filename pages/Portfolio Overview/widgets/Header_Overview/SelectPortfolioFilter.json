@@ -25,7 +25,7 @@
   "isFilterable": true,
   "isLoading": false,
   "isVisible": true,
-  "labelText": "Goal / Bucket",
+  "labelText": "Portfolio",
   "leftColumn": 31,
   "onOptionChange": "{{GetHoldings.run();\nGetHistory.run()}}",
   "optionLabel": "label",
@@ -56,28 +56,7 @@
   "placeholderText": "Select option",
   "rightColumn": 44,
   "serverSideFiltering": false,
-  "sourceData": [
-    {
-      "label": "All Portfolios",
-      "value": "ALL"
-    },
-    {
-      "label": "Main",
-      "value": "Main"
-    },
-    {
-      "label": "Kids Future",
-      "value": "Kids Future"
-    },
-    {
-      "label": "Loan Payoff",
-      "value": "Loan Payoff"
-    },
-    {
-      "label": "Y Balloon",
-      "value": "Y-balloon"
-    }
-  ],
+  "sourceData": "{{ PortfolioUtils.getPortfolioOptions() }}",
   "topRow": 1,
   "type": "SELECT_WIDGET",
   "version": 1,

@@ -1,6 +1,6 @@
 {
   "bottomRow": 28,
-  "defaultOptionValue": "Main",
+  "defaultOptionValue": "EUR",
   "dynamicBindingPathList": [
     {
       "key": "sourceData"
@@ -21,34 +21,30 @@
   "isFilterable": true,
   "isLoading": false,
   "isVisible": true,
-  "labelText": "Goal Bucket",
+  "labelText": "Portfolio",
   "leftColumn": 1,
   "onOptionChange": "",
   "optionLabel": "label",
   "optionValue": "value",
   "options": [
     {
-      "label": "Main Wealth",
-      "value": "Main"
+      "label": "EUR",
+      "value": "EUR"
     },
     {
-      "label": "Kids Future",
-      "value": "Kids Future"
+      "label": "USD",
+      "value": "USD"
     },
     {
-      "label": "Loan Payoff",
-      "value": "Loan Payoff"
-    },
-    {
-      "label": "Y Balloon",
-      "value": "Y-balloon"
+      "label": "Samarth",
+      "value": "Samarth"
     }
   ],
   "parentId": "cvs_1i8xj575",
   "placeholderText": "Select option",
-  "rightColumn": 44,
+  "rightColumn": 22,
   "serverSideFiltering": false,
-  "sourceData": "{{ Array.from(new Set([\"Main\"].concat((GetTransactions.data || []).map(t => t.portfolio || \"Main\")))).map(p => ({ label: p, value: p })) }}",
+  "sourceData": "{{ Array.from(new Set([\"EUR\",\"USD\",\"Samarth\"].concat((GetTransactions.data || []).map(t => t.portfolio).filter(Boolean)))).map(p => ({ label: p, value: p })) }}",
   "topRow": 23,
   "type": "SELECT_WIDGET",
   "version": 1,
