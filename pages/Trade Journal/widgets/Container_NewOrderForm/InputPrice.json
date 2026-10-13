@@ -1,0 +1,19 @@
+{
+  "bottomRow": 22,
+  "defaultText": "0",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "inputType": "NUMBER",
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Execution Price",
+  "leftColumn": 27,
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "173.50",
+  "rightColumn": 56,
+  "topRow": 17,
+  "type": "INPUT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "inp_iyqq0vvo",
+  "widgetName": "InputPrice"
+}

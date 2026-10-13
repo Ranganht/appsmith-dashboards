@@ -1,0 +1,20 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.7rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_asymheui",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "Most Recent Execution",
+  "textColor": "#94A3B8",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_cjocwsf9",
+  "widgetName": "Sub_Card_LatestTrade"
+}

@@ -1,0 +1,20 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_cawgzjrt",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "ETF vs STOCK SPLIT",
+  "textColor": "#64748B",
+  "topRow": 2,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_8zp31p1q",
+  "widgetName": "Lbl_Card_EtfVsStock"
+}

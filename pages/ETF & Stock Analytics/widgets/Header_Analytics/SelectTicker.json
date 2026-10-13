@@ -1,0 +1,83 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Focus Ticker",
+  "leftColumn": 32,
+  "onOptionChange": "{{GetTickerPrice.run();\nGetTickerTransactions.run()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "VWCE.DE - Vanguard All-World Acc (EUR)",
+      "value": "VWCE.DE"
+    },
+    {
+      "label": "IS3N.DE - iShares Core MSCI EM IMI (EUR)",
+      "value": "IS3N.DE"
+    },
+    {
+      "label": "VHYL.AS - Vanguard All-World High Div (EUR)",
+      "value": "VHYL.AS"
+    },
+    {
+      "label": "H4ZJ.DE - HSBC MSCI World (EUR)",
+      "value": "H4ZJ.DE"
+    },
+    {
+      "label": "VVSM.DE - VanEck Semiconductor (EUR)",
+      "value": "VVSM.DE"
+    },
+    {
+      "label": "DRAM.DE - Defiance Memory ETF (EUR)",
+      "value": "DRAM.DE"
+    },
+    {
+      "label": "VUSA.DE - Vanguard S&P 500 (EUR)",
+      "value": "VUSA.DE"
+    },
+    {
+      "label": "AAPL - Apple Inc. (USD)",
+      "value": "AAPL"
+    },
+    {
+      "label": "MSFT - Microsoft Corp. (USD)",
+      "value": "MSFT"
+    },
+    {
+      "label": "NVDA - NVIDIA Corp. (USD)",
+      "value": "NVDA"
+    },
+    {
+      "label": "AMZN - Amazon.com Inc. (USD)",
+      "value": "AMZN"
+    }
+  ],
+  "parentId": "cvs_3q68f7u0",
+  "placeholderText": "Select option",
+  "rightColumn": 52,
+  "serverSideFiltering": false,
+  "sourceData": "{{ (GetEquitiesHoldings.data || []).map(h => ({ label: h.symbol + ' - ' + (h.name || h.symbol) + ' (' + (h.nativeCurrency || h.currency || 'EUR') + ')', value: h.symbol })) }}",
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_qcowtc3e",
+  "widgetName": "SelectTicker"
+}

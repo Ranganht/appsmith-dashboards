@@ -1,0 +1,19 @@
+{
+  "bottomRow": 28,
+  "defaultText": "0",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "inputType": "NUMBER",
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Broker Fee",
+  "leftColumn": 44,
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "0",
+  "rightColumn": 64,
+  "topRow": 23,
+  "type": "INPUT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "inp_uk31zbvz",
+  "widgetName": "InputFee"
+}

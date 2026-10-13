@@ -1,0 +1,53 @@
+{
+  "bottomRow": 28,
+  "defaultOptionValue": "Main",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "optionValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Goal Bucket",
+  "leftColumn": 1,
+  "onOptionChange": "",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "Main Wealth",
+      "value": "Main"
+    },
+    {
+      "label": "Kids Future",
+      "value": "Kids Future"
+    },
+    {
+      "label": "Loan Payoff",
+      "value": "Loan Payoff"
+    }
+  ],
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "Select option",
+  "rightColumn": 44,
+  "serverSideFiltering": false,
+  "sourceData": "{{ Array.from(new Set([\"Main\"].concat((GetTransactions.data || []).map(t => t.portfolio || \"Main\")))).map(p => ({ label: p, value: p })) }}",
+  "topRow": 23,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_leubcwqz",
+  "widgetName": "SelectPortfolioInput"
+}

@@ -1,0 +1,20 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.7rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_gu9bjpwq",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "Live Net Worth in EUR",
+  "textColor": "#94A3B8",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_lrldfzre",
+  "widgetName": "Sub_Stat_TotalValue"
+}

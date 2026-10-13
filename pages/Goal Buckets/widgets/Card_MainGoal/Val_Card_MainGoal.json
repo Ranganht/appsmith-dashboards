@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_n0ck8atl",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "{{GoalUtils.getGoalVal(\"Main\")}}",
+  "textColor": "#0F172A",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_x17gr0z9",
+  "widgetName": "Val_Card_MainGoal"
+}

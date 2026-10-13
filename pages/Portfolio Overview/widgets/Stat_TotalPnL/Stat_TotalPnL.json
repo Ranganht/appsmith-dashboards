@@ -1,0 +1,39 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderRadius": "0.375rem",
+  "bottomRow": 22,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+  "children": [
+    {
+      "bottomRow": 120,
+      "canExtend": false,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [],
+      "isLoading": false,
+      "isVisible": true,
+      "leftColumn": 0,
+      "parentColumnSpace": 1,
+      "parentId": "cnt_q71gcwuo",
+      "parentRowSpace": 1,
+      "rightColumn": 15,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "cvs_yglvm9qx",
+      "widgetName": "Canvas_Stat_TotalPnL"
+    }
+  ],
+  "dynamicBindingPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 32,
+  "parentColumnSpace": 1,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 47,
+  "topRow": 10,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "cnt_q71gcwuo",
+  "widgetName": "Stat_TotalPnL"
+}

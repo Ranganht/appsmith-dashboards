@@ -1,0 +1,18 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_3j1gle54",
+  "rightColumn": 64,
+  "text": "Equity Position Weights (€ Market Value)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_fg0rwval",
+  "widgetName": "Title_BarAllocation"
+}

@@ -1,0 +1,18 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_5eo35of2",
+  "rightColumn": 64,
+  "text": "EUR ETFs vs US Stocks Split",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_yz19mbtt",
+  "widgetName": "Title_EtfDonut"
+}

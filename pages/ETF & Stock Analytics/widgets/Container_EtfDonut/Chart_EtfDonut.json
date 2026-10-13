@@ -1,0 +1,27 @@
+{
+  "bottomRow": 42,
+  "chartData": {
+    "undefined": {
+      "data": "{{ EquityAnalytics.getEtfVsStockPieData() }}",
+      "seriesName": "Asset Split"
+    }
+  },
+  "chartName": "Asset Split",
+  "chartType": "PIE_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.undefined.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_5eo35of2",
+  "rightColumn": 63,
+  "topRow": 6,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_zu599niz",
+  "widgetName": "Chart_EtfDonut"
+}

@@ -1,0 +1,20 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_3dhkwu4b",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "TOTAL CAPITAL TRANSACTED",
+  "textColor": "#64748B",
+  "topRow": 0,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_ueut06lu",
+  "widgetName": "Lbl_Card_TradeVolume"
+}

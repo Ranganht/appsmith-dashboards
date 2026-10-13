@@ -1,0 +1,27 @@
+{
+  "bottomRow": 43,
+  "chartData": {
+    "undefined": {
+      "data": "{{ PortfolioUtils.getAllocationData() }}",
+      "seriesName": "Holdings Allocation"
+    }
+  },
+  "chartName": "Holdings",
+  "chartType": "PIE_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.undefined.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_fpn966x3",
+  "rightColumn": 64,
+  "topRow": 7,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_ydrkop7g",
+  "widgetName": "AllocationChart"
+}

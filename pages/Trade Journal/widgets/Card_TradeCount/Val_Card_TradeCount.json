@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_jwzyl87v",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{GetTransactions.data?.length || 0}} Orders",
+  "textColor": "#0F172A",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_usggrg18",
+  "widgetName": "Val_Card_TradeCount"
+}

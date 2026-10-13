@@ -1,0 +1,20 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_t2uv9hb0",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "24H DAY MOVEMENT",
+  "textColor": "#64748B",
+  "topRow": 2,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_nicjd528",
+  "widgetName": "Lbl_Stat_DayPnL"
+}

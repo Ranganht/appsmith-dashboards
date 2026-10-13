@@ -1,0 +1,19 @@
+{
+  "bottomRow": 6,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_j3p1x9vn",
+  "rightColumn": 30,
+  "text": "📊 Portfolio Overview (EUR €)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_hm5g29o5",
+  "widgetName": "Title_Overview"
+}

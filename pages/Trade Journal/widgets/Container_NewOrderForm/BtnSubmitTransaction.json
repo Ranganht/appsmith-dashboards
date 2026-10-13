@@ -1,0 +1,22 @@
+{
+  "bottomRow": 54,
+  "buttonColor": "#10B981",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "onClick": "{{AddTransaction.run()}}",
+  "parentId": "cvs_1i8xj575",
+  "rightColumn": 56,
+  "text": "💾 Save Order to MongoDB",
+  "topRow": 48,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_bze08ok3",
+  "widgetName": "BtnSubmitTransaction"
+}

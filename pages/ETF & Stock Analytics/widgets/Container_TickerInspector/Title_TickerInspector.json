@@ -1,0 +1,22 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_uoasmbau",
+  "rightColumn": 60,
+  "text": "🔍 Ticker Deep-Dive: {{SelectTicker.selectedOptionValue || \"VWCE.DE\"}} - {{GetTickerPrice.data[0]?.name || \"Quote Details\"}}",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_foxapowe",
+  "widgetName": "Title_TickerInspector"
+}

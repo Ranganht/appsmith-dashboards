@@ -1,0 +1,39 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderRadius": "0.375rem",
+  "bottomRow": 68,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+  "children": [
+    {
+      "bottomRow": 440,
+      "canExtend": false,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [],
+      "isLoading": false,
+      "isVisible": true,
+      "leftColumn": 0,
+      "parentColumnSpace": 1,
+      "parentId": "cnt_w2g4o0jl",
+      "parentRowSpace": 1,
+      "rightColumn": 41,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "cvs_0h7l8g35",
+      "widgetName": "Canvas_ChartSection"
+    }
+  ],
+  "dynamicBindingPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 42,
+  "topRow": 24,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "cnt_w2g4o0jl",
+  "widgetName": "ChartSection"
+}

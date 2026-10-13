@@ -1,0 +1,61 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "ALL",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "optionValue"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Goal / Bucket",
+  "leftColumn": 31,
+  "onOptionChange": "{{GetHoldings.run();\nGetHistory.run()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "All Portfolios",
+      "value": "ALL"
+    },
+    {
+      "label": "Main",
+      "value": "Main"
+    },
+    {
+      "label": "Kids Future",
+      "value": "Kids Future"
+    },
+    {
+      "label": "Loan Payoff",
+      "value": "Loan Payoff"
+    }
+  ],
+  "parentId": "cvs_j3p1x9vn",
+  "placeholderText": "Select option",
+  "rightColumn": 44,
+  "serverSideFiltering": false,
+  "sourceData": "{{ [{ label: \"All Portfolios\", value: \"ALL\" }].concat((GetPortfolioSummary.data?.[0]?.availablePortfolios || [\"Main\"]).map(p => ({ label: p, value: p }))) }}",
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_mntfkpnl",
+  "widgetName": "SelectPortfolioFilter"
+}

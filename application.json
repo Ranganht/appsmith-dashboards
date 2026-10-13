@@ -1,0 +1,42 @@
+{
+  "appIsExample": false,
+  "applicationDetail": {
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  },
+  "applicationVersion": 1,
+  "color": "#C7F3E3",
+  "icon": "rupee",
+  "pages": [
+    {
+      "id": "Portfolio Overview",
+      "isDefault": true
+    },
+    {
+      "id": "ETF & Stock Analytics",
+      "isDefault": false
+    },
+    {
+      "id": "Goal Buckets",
+      "isDefault": false
+    },
+    {
+      "id": "Trade Journal",
+      "isDefault": false
+    },
+    {
+      "id": "Holdings",
+      "isDefault": false
+    }
+  ],
+  "unpublishedApplicationDetail": {
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  }
+}

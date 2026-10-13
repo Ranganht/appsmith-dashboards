@@ -1,0 +1,20 @@
+{
+  "bottomRow": 34,
+  "defaultDate": "{{new Date().toISOString()}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "defaultDate"
+    }
+  ],
+  "isLoading": false,
+  "isVisible": true,
+  "label": "Execution Date",
+  "leftColumn": 1,
+  "parentId": "cvs_1i8xj575",
+  "rightColumn": 63,
+  "topRow": 29,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 1,
+  "widgetId": "dp_yyrpxaoj",
+  "widgetName": "DatePickerDate"
+}

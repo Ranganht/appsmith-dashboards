@@ -1,0 +1,20 @@
+{
+  "bottomRow": 41,
+  "defaultText": "",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "inputType": "MULTI_LINE_TEXT",
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Trade Notes / Strategy Tag",
+  "leftColumn": 1,
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "Monthly contribution",
+  "rightColumn": 60,
+  "shouldAllowAutofill": false,
+  "topRow": 35,
+  "type": "INPUT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "inp_67fq0ixb",
+  "widgetName": "InputNotes"
+}

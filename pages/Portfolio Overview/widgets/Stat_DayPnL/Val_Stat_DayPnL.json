@@ -1,0 +1,27 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_t2uv9hb0",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{PortfolioUtils.getDayPnLText()}}",
+  "textColor": "{{PortfolioUtils.getPnLColor(PortfolioUtils.getDayPnL())}}",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_id8oxtge",
+  "widgetName": "Val_Stat_DayPnL"
+}

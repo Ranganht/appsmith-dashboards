@@ -1,0 +1,63 @@
+{
+  "bottomRow": 6,
+  "defaultOptionValue": "1M",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "",
+  "leftColumn": 49,
+  "onOptionChange": "{{GetHistory.run()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "1 Week",
+      "value": "1W"
+    },
+    {
+      "label": "1 Month",
+      "value": "1M"
+    },
+    {
+      "label": "1 Year",
+      "value": "1Y"
+    },
+    {
+      "label": "All Time",
+      "value": "ALL"
+    }
+  ],
+  "parentId": "cvs_0h7l8g35",
+  "placeholderText": "Select option",
+  "rightColumn": 61,
+  "serverSideFiltering": false,
+  "sourceData": [
+    {
+      "label": "1 Week",
+      "value": "1W"
+    },
+    {
+      "label": "1 Month",
+      "value": "1M"
+    },
+    {
+      "label": "1 Year",
+      "value": "1Y"
+    },
+    {
+      "label": "All Time",
+      "value": "ALL"
+    }
+  ],
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_25c4ovpc",
+  "widgetName": "SelectTimeframe"
+}

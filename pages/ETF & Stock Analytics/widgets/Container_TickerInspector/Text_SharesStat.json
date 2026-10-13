@@ -1,0 +1,20 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "0.95rem",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_uoasmbau",
+  "rightColumn": 60,
+  "text": "**Shares Held:** {{EquityAnalytics.getTickerShares(SelectTicker.selectedOptionValue)}} | **Cost Basis (€):** {{EquityAnalytics.formatCurrency(EquityAnalytics.getTickerInvested(SelectTicker.selectedOptionValue))}} | **Position Value (€):** {{EquityAnalytics.formatCurrency(EquityAnalytics.getTickerValue(SelectTicker.selectedOptionValue))}}",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_tnewxgzx",
+  "widgetName": "Text_SharesStat"
+}

@@ -1,0 +1,18 @@
+{
+  "bottomRow": 6,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_eyx9m0u0",
+  "rightColumn": 40,
+  "text": "📝 Trade Journal & Transaction Manager",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_tz6o362i",
+  "widgetName": "Title_Journal"
+}

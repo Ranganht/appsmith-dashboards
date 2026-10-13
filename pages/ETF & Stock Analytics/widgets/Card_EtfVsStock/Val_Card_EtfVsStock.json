@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_cawgzjrt",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{EquityAnalytics.getEtfSharePct()}}% / {{EquityAnalytics.getStockSharePct()}}%",
+  "textColor": "#2563EB",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_7qypn7f9",
+  "widgetName": "Val_Card_EtfVsStock"
+}

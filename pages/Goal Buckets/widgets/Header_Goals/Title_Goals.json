@@ -1,0 +1,18 @@
+{
+  "bottomRow": 6,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_li76jr6f",
+  "rightColumn": 35,
+  "text": "🎯 Goal Buckets & Dedicated Portfolios (EUR €)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_64dirwgl",
+  "widgetName": "Title_Goals"
+}

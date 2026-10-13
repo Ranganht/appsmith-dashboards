@@ -1,0 +1,71 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "ALL",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Asset Class",
+  "leftColumn": 45,
+  "onOptionChange": "{{GetHistory.run()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "All Asset Types",
+      "value": "ALL"
+    },
+    {
+      "label": "ETFs",
+      "value": "ETF"
+    },
+    {
+      "label": "Stocks",
+      "value": "STOCK"
+    },
+    {
+      "label": "Bullion",
+      "value": "BULLION"
+    },
+    {
+      "label": "Property",
+      "value": "PROPERTY"
+    }
+  ],
+  "parentId": "cvs_j3p1x9vn",
+  "placeholderText": "Select option",
+  "rightColumn": 54,
+  "serverSideFiltering": false,
+  "sourceData": [
+    {
+      "label": "All Asset Types",
+      "value": "ALL"
+    },
+    {
+      "label": "ETFs",
+      "value": "ETF"
+    },
+    {
+      "label": "Stocks",
+      "value": "STOCK"
+    },
+    {
+      "label": "Bullion",
+      "value": "BULLION"
+    },
+    {
+      "label": "Property",
+      "value": "PROPERTY"
+    }
+  ],
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_ym12khz7",
+  "widgetName": "SelectAssetTypeFilter"
+}

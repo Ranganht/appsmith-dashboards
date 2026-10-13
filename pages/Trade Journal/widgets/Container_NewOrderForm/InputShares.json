@@ -1,0 +1,19 @@
+{
+  "bottomRow": 22,
+  "defaultText": "0",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "inputType": "NUMBER",
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Number of Shares",
+  "leftColumn": 1,
+  "parentId": "cvs_1i8xj575",
+  "placeholderText": "10",
+  "rightColumn": 27,
+  "topRow": 17,
+  "type": "INPUT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "inp_w9k0ujv8",
+  "widgetName": "InputShares"
+}

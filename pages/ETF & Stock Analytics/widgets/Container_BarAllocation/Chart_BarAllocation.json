@@ -1,0 +1,28 @@
+{
+  "bottomRow": 42,
+  "chartData": {
+    "h2iz5mopk5": {
+      "color": "#a855f7",
+      "data": "{{ EquityAnalytics.getBarChartData() }}",
+      "seriesName": "Market Value (€)"
+    }
+  },
+  "chartName": "Holdings by Value",
+  "chartType": "BAR_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.h2iz5mopk5.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_3j1gle54",
+  "rightColumn": 64,
+  "topRow": 6,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_qrjzm47h",
+  "widgetName": "Chart_BarAllocation"
+}

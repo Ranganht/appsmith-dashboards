@@ -1,0 +1,18 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_1i8xj575",
+  "rightColumn": 64,
+  "text": "⚡ Record New Transaction",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_vtbc2vob",
+  "widgetName": "Title_NewOrder"
+}

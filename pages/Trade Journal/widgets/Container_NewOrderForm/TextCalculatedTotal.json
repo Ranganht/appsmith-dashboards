@@ -1,0 +1,21 @@
+{
+  "bottomRow": 46,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1rem",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_1i8xj575",
+  "rightColumn": 62,
+  "text": "💰 **Estimated Total:** {{ ((Number(InputShares.text || 0) * Number(InputPrice.text || 0)) + Number(InputFee.text || 0)).toFixed(2) }} {{SelectCurrency.selectedOptionValue || \"EUR\"}}",
+  "textColor": "#0F172A",
+  "topRow": 42,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_6ofzv02q",
+  "widgetName": "TextCalculatedTotal"
+}

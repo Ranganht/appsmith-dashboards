@@ -1,0 +1,25 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_c7opxbnx",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "{{ GoalUtils.getGoalVal(\"Y-balloon\") }}",
+  "textColor": "#2563EB",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_gey8jll1",
+  "widgetName": "Val_Card_KidsGoal"
+}

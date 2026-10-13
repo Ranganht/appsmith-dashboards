@@ -1,0 +1,20 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "0.95rem",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 31,
+  "parentId": "cvs_uoasmbau",
+  "rightColumn": 60,
+  "text": "**Day Range:** {{GetTickerPrice.data[0]?.low?.toFixed(2)}} - {{GetTickerPrice.data[0]?.high?.toFixed(2)}} | **Prev Close:** {{GetTickerPrice.data[0]?.previousClose?.toFixed(2)}} ({{GetTickerPrice.data[0]?.currency || \"EUR\"}})",
+  "topRow": 5,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_1k1ubj2v",
+  "widgetName": "Text_RangeStat"
+}

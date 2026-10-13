@@ -1,0 +1,61 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "ALL/",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "optionValue"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Filter Goal",
+  "leftColumn": 36,
+  "onOptionChange": "{{GetGoalHoldings.run()}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "All Buckets",
+      "value": "ALL"
+    },
+    {
+      "label": "Main",
+      "value": "Main"
+    },
+    {
+      "label": "Kids Future",
+      "value": "Kids Future"
+    },
+    {
+      "label": "Loan Payoff",
+      "value": "Loan Payoff"
+    }
+  ],
+  "parentId": "cvs_li76jr6f",
+  "placeholderText": "Select option",
+  "rightColumn": 52,
+  "serverSideFiltering": false,
+  "sourceData": "{{ GoalUtils.getGoalOptions() }}",
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_lxmf8uno",
+  "widgetName": "SelectGoalFilter"
+}

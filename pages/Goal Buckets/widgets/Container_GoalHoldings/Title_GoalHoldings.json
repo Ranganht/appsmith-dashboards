@@ -1,0 +1,18 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_5rb9j25w",
+  "rightColumn": 60,
+  "text": "📋 Bucket Asset Allocation & Holdings (€)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_vhyvgaem",
+  "widgetName": "Title_GoalHoldings"
+}

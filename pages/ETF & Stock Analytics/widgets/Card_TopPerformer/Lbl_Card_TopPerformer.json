@@ -1,0 +1,20 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_qoii46q7",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "TOP PERFORMER (HIGHEST ROI)",
+  "textColor": "#64748B",
+  "topRow": 2,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_bi0mrspo",
+  "widgetName": "Lbl_Card_TopPerformer"
+}

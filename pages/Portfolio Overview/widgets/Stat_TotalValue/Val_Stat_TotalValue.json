@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_gu9bjpwq",
+  "parentRowSpace": 10,
+  "rightColumn": 61,
+  "text": "{{PortfolioUtils.formatCurrency(PortfolioUtils.getTotalValue())}}",
+  "textColor": "#0F172A",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_bty0ziph",
+  "widgetName": "Val_Stat_TotalValue"
+}

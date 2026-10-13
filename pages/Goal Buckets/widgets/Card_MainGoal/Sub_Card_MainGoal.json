@@ -1,0 +1,25 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.7rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_n0ck8atl",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "Invested: {{ GoalUtils.getGoalInv(\"Main\") }} | P&L: {{ GoalUtils.getGoalPnL(\"Main\") }}",
+  "textColor": "#94A3B8",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_24860dfd",
+  "widgetName": "Sub_Card_MainGoal"
+}

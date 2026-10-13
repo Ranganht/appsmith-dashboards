@@ -1,0 +1,37 @@
+{
+  "bottomRow": 43,
+  "chartData": {
+    "ncjhz86488": {
+      "color": "#a855f7",
+      "data": "{{ PortfolioUtils.getInvestedChartData() }}",
+      "seriesName": "Invested Capital (€)"
+    },
+    "ols9a4umux": {
+      "color": "#22c55e",
+      "data": "{{ PortfolioUtils.getValueChartData() }}",
+      "seriesName": "Portfolio Value (€)"
+    }
+  },
+  "chartName": "Performance",
+  "chartType": "LINE_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.ols9a4umux.data"
+    },
+    {
+      "key": "chartData.ncjhz86488.data"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_0h7l8g35",
+  "rightColumn": 64,
+  "topRow": 7,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_bt6jl0jr",
+  "widgetName": "PerformanceChart"
+}

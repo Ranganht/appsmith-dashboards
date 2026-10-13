@@ -1,0 +1,20 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "0.95rem",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_uoasmbau",
+  "rightColumn": 30,
+  "text": "**Live Market Price:** {{GetTickerPrice.data[0]?.currency === \"USD\" ? \"$\" : \"€\"}}{{GetTickerPrice.data[0]?.currentPrice?.toFixed(2)}} ({{GetTickerPrice.data[0]?.change >= 0 ? \"+\" : \"\"}}{{GetTickerPrice.data[0]?.change?.toFixed(2)}} / {{GetTickerPrice.data[0]?.changePercent?.toFixed(2)}}%)",
+  "topRow": 5,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_kyciodhc",
+  "widgetName": "Text_PriceStat"
+}

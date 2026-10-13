@@ -1,0 +1,22 @@
+{
+  "bottomRow": 6,
+  "buttonColor": "#3B82F6",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 48,
+  "onClick": "{{GetTransactions.run()}}",
+  "parentId": "cvs_eyx9m0u0",
+  "rightColumn": 61,
+  "text": "🔄 Refresh Trades",
+  "topRow": 2,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_qpi4nqcn",
+  "widgetName": "BtnRefresh_Journal"
+}

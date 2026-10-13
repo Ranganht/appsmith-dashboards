@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_2228w0ox",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "{{PortfolioUtils.formatCurrency(PortfolioUtils.getTotalInvested())}}",
+  "textColor": "#2563EB",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_ephom68j",
+  "widgetName": "Val_Stat_TotalInvested"
+}

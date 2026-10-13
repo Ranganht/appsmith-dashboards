@@ -1,0 +1,27 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_c7jvupln",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{EquityAnalytics.formatCurrency(EquityAnalytics.getTotalEquityPnL())}}",
+  "textColor": "{{EquityAnalytics.getTotalEquityPnL() >= 0 ? \"#10B981\" : \"#EF4444\"}}",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_goor8ok9",
+  "widgetName": "Val_Card_EquityPnL"
+}
