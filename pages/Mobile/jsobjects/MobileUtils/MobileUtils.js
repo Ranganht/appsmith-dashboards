@@ -7,26 +7,27 @@ export default {
     });
   },
 
-  // Signed 24h move with its percentage, e.g. "+€12,34 (+1.23%)".
+  // Signed 24h move with its percentage, e.g. "+€12,34 (+1.23%)". Expects a raw
+  // holding row (dayChange / dayChangePct).
   formatChange(row) {
     if (!row) return '';
-    const chg = Number(row.changeAmt) || 0;
-    const pct = Number(row.changePct) || 0;
+    const chg = Number(row.dayChange) || 0;
+    const pct = Number(row.dayChangePct) || 0;
     const chgSign = chg >= 0 ? '+' : '';
     const pctSign = pct >= 0 ? '+' : '';
     return `${chgSign}${this.formatCurrency(chg)} (${pctSign}${pct.toFixed(2)}%)`;
   },
 
-  // Rows for the mobile table. The keys here MUST match the table columns'
-  // originalId, otherwise Appsmith cannot resolve the column against the data
-  // and reports a cyclic dependency. The query already returns holdings ordered
-  // by 24h change ascending, so the list keeps that order.
+  // Rows for the mobile table. All formatting happens here so the table columns
+  // stay plain pass-throughs (currentRow["key"]); calling a JS object from a
+  // column's computedValue triggers an Appsmith cyclic dependency. The query
+  // already returns holdings ordered by 24h change ascending, so the list keeps
+  // that order.
   getRows() {
     return (GetHoldings.data || []).map(r => ({
       name: r.name || r.symbol || '',
-      changePct: Number(r.dayChangePct) || 0,
-      changeAmt: Number(r.dayChange) || 0,
-      value: Number(r.currentValue) || 0,
+      change24: this.formatChange(r),
+      value: this.formatCurrency(r.currentValue),
     }));
   },
 

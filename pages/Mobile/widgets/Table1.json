@@ -34,15 +34,13 @@
   "columnOrder": [
     "name",
     "change24",
-    "changeAmt",
     "value"
   ],
-  "columnUpdatedAt": 1791549412051,
+  "columnUpdatedAt": 1791920884135,
   "columnWidthMap": {
-    "name": 220,
-    "change24": 190,
-    "changeAmt": 130,
-    "value": 150
+    "name": 260,
+    "change24": 200,
+    "value": 160
   },
   "compactMode": "SHORT",
   "customIsLoading": false,
@@ -68,9 +66,6 @@
     },
     {
       "key": "primaryColumns.change24.computedValue"
-    },
-    {
-      "key": "primaryColumns.changeAmt.computedValue"
     },
     {
       "key": "primaryColumns.value.computedValue"
@@ -113,7 +108,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{ Table1.processedTableData.map((r) => r.name) }}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"name\"])) : \"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -137,19 +132,19 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 220
+      "width": 260
     },
     "change24": {
-      "alias": "changePct",
+      "alias": "change24",
       "allowCellWrapping": false,
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{ Table1.processedTableData.map((r) => MobileUtils.formatChange(r)) }}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"change24\"])) : \"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
-      "enableSort": true,
+      "enableSort": false,
       "horizontalAlignment": "LEFT",
       "id": "change24",
       "index": 1,
@@ -163,60 +158,28 @@
       "isVisible": true,
       "label": "24h",
       "notation": "standard",
-      "originalId": "changePct",
+      "originalId": "change24",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 190
-    },
-    "changeAmt": {
-      "alias": "changeAmt",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{ Table1.processedTableData.map((r) => MobileUtils.formatCurrency(r.changeAmt)) }}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": false,
-      "enableSort": false,
-      "horizontalAlignment": "LEFT",
-      "id": "changeAmt",
-      "index": 2,
-      "isCellEditable": false,
-      "isCellVisible": false,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Change (€)",
-      "notation": "standard",
-      "originalId": "changeAmt",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 130
+      "width": 200
     },
     "value": {
       "alias": "value",
       "allowCellWrapping": false,
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{ Table1.processedTableData.map((r) => MobileUtils.formatCurrency(r.value)) }}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"value\"])) : \"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
-      "enableSort": true,
+      "enableSort": false,
       "horizontalAlignment": "RIGHT",
       "id": "value",
-      "index": 3,
+      "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -233,7 +196,7 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 160
     }
   },
   "renderMode": "CANVAS",
