@@ -95,6 +95,7 @@ export default {
     return {
       'retirement': 100000,
       'Y-balloon': 24000,
+      'education': 250000,
     };
   },
 
