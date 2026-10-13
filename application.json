@@ -26,6 +26,10 @@
     {
       "id": "Holdings",
       "isDefault": false
+    },
+    {
+      "id": "Mobile",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

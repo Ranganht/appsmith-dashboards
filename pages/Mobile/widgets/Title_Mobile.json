@@ -1,0 +1,20 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 62,
+  "text": "Holdings · 24h change (ascending)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_mobile_title",
+  "widgetName": "Title_Mobile"
+}
