@@ -1,0 +1,27 @@
+{
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 34,
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{ \"Today · \" + MobileUtils.getDayPnLText() }}",
+  "textColor": "#0F172A",
+  "topRow": 6,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "stat_mobile_day",
+  "widgetName": "Stat_Mobile_Day"
+}

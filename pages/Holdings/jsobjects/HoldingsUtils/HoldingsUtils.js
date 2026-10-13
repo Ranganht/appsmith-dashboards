@@ -29,8 +29,8 @@ export default {
   },
 
   // Goal (purpose) buckets, e.g. Y-balloon, education, retirement. Combines the
-  // summary doc with the values present in the loaded holdings so the options
-  // never come up short, falling back to the full known set.
+  // summary doc with the values present in the loaded holdings so the options never
+  // come up short, falling back to the full known set.
   getGoalOptions() {
     const fromSummary = GetPortfolioOverview.data?.[0]?.availableGoals || [];
     const fromRows = (GetHoldings.data || []).map(r => r.goal).filter(Boolean);
@@ -41,9 +41,9 @@ export default {
     return options;
   },
 
-  // Portfolio (owner/currency) buckets, e.g. EUR, USD, Samarth. Combines the
-  // summary doc with the values present in the loaded holdings so the options
-  // never come up short, falling back to the full known set.
+  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Combines the summary doc
+  // with the values present in the loaded holdings so the options never come up
+  // short, falling back to the full known set.
   getPortfolioOptions() {
     const fromSummary = GetPortfolioOverview.data?.[0]?.availablePortfolios || [];
     const fromRows = (GetHoldings.data || []).map(r => r.portfolio).filter(Boolean);
@@ -52,5 +52,52 @@ export default {
     const options = [{ label: "All Portfolios", value: "ALL" }];
     list.forEach(p => options.push({ label: p, value: p }));
     return options;
+  },
+
+  // Totals for the summary bar. They follow the table filter because they read
+  // the same (already filtered) GetHoldings result.
+  getTotalValue() {
+    return (GetHoldings.data || []).reduce((sum, h) => sum + (Number(h.currentValue) || 0), 0);
+  },
+
+  getTotalInvested() {
+    return (GetHoldings.data || []).reduce((sum, h) => sum + (Number(h.totalInvested) || 0), 0);
+  },
+
+  getTotalPnL() {
+    return this.getTotalValue() - this.getTotalInvested();
+  },
+
+  getTotalPnLPct() {
+    const inv = this.getTotalInvested();
+    return inv > 0 ? ((this.getTotalPnL() / inv) * 100) : 0;
+  },
+
+  getTotalPnLText() {
+    const pnl = this.getTotalPnL();
+    const pct = this.getTotalPnLPct();
+    const sign = pnl >= 0 ? '+' : '';
+    return `${sign}${this.formatCurrency(pnl)} (${sign}${pct.toFixed(2)}%)`;
+  },
+
+  getDayPnL() {
+    return (GetHoldings.data || []).reduce((sum, h) => sum + (Number(h.dayChange) || 0), 0);
+  },
+
+  getDayPnLPct() {
+    const val = this.getTotalValue();
+    const day = this.getDayPnL();
+    return (val - day) > 0 ? ((day / (val - day)) * 100) : 0;
+  },
+
+  getDayPnLText() {
+    const day = this.getDayPnL();
+    const pct = this.getDayPnLPct();
+    const sign = day >= 0 ? '+' : '';
+    return `${sign}${this.formatCurrency(day)} (${sign}${pct.toFixed(2)}%)`;
+  },
+
+  getPnLColor(value) {
+    return Number(value) >= 0 ? '#10b981' : '#ef4444';
   }
 }

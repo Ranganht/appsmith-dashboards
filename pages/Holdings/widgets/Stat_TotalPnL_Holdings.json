@@ -1,0 +1,27 @@
+{
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 32,
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 48,
+  "text": "{{ \"P&L · \" + HoldingsUtils.getTotalPnLText() }}",
+  "textColor": "{{ HoldingsUtils.getPnLColor(HoldingsUtils.getTotalPnL()) }}",
+  "topRow": 7,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "stat_totalpnl_holdings",
+  "widgetName": "Stat_TotalPnL_Holdings"
+}

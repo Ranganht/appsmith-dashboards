@@ -1,0 +1,27 @@
+{
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 48,
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{ \"Today · \" + HoldingsUtils.getDayPnLText() }}",
+  "textColor": "{{ HoldingsUtils.getPnLColor(HoldingsUtils.getDayPnL()) }}",
+  "topRow": 7,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "stat_day_holdings",
+  "widgetName": "Stat_Day_Holdings"
+}

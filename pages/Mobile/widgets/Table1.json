@@ -32,7 +32,6 @@
     }
   },
   "columnOrder": [
-    "symbol",
     "name",
     "change24",
     "changeAmt",
@@ -40,11 +39,10 @@
   ],
   "columnUpdatedAt": 1791549412051,
   "columnWidthMap": {
-    "symbol": 110,
-    "name": 170,
-    "change24": 170,
+    "name": 220,
+    "change24": 190,
     "changeAmt": 130,
-    "value": 140
+    "value": 150
   },
   "compactMode": "SHORT",
   "customIsLoading": false,
@@ -64,9 +62,6 @@
     },
     {
       "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.symbol.computedValue"
     },
     {
       "key": "primaryColumns.name.computedValue"
@@ -106,44 +101,12 @@
   "mobileBottomRow": 120,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 64,
-  "mobileTopRow": 7,
+  "mobileTopRow": 13,
   "needsErrorInfo": false,
-  "parentColumnSpace": 1,
+  "parentColumnSpace": 12.828125,
   "parentId": "0",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "symbol": {
-      "alias": "symbol",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "columnType": "text",
-      "computedValue": "{{ Table1.processedTableData.map((r) => r.symbol) }}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "symbol",
-      "index": 0,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Symbol",
-      "notation": "standard",
-      "originalId": "symbol",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 110
-    },
     "name": {
       "alias": "name",
       "allowCellWrapping": false,
@@ -174,7 +137,7 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 170
+      "width": 220
     },
     "change24": {
       "alias": "changePct",
@@ -187,9 +150,9 @@
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "RIGHT",
+      "horizontalAlignment": "LEFT",
       "id": "change24",
-      "index": 0,
+      "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -206,7 +169,7 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 170
+      "width": 190
     },
     "changeAmt": {
       "alias": "changeAmt",
@@ -221,7 +184,7 @@
       "enableSort": false,
       "horizontalAlignment": "LEFT",
       "id": "changeAmt",
-      "index": 0,
+      "index": 2,
       "isCellEditable": false,
       "isCellVisible": false,
       "isDerived": false,
@@ -253,7 +216,7 @@
       "enableSort": true,
       "horizontalAlignment": "RIGHT",
       "id": "value",
-      "index": 0,
+      "index": 3,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -270,7 +233,7 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 140
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
@@ -279,7 +242,7 @@
   "searchKey": "",
   "tableData": "{{ MobileUtils.getRows() }}",
   "textSize": "0.875rem",
-  "topRow": 6,
+  "topRow": 13,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

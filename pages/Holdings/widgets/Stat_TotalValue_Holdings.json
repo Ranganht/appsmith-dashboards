@@ -1,0 +1,24 @@
+{
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 0,
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 16,
+  "text": "{{ \"Total Value · \" + HoldingsUtils.formatCurrency(HoldingsUtils.getTotalValue()) }}",
+  "textColor": "#0F172A",
+  "topRow": 7,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "stat_totalvalue_holdings",
+  "widgetName": "Stat_TotalValue_Holdings"
+}
