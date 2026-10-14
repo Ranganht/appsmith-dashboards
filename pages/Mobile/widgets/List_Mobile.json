@@ -1,0 +1,26 @@
+{
+  "bottomRow": 120,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "fontSize": "0.75rem",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 0,
+  "overflow": "SCROLL",
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 64,
+  "text": "{{ MobileUtils.getHoldingsHtml() }}",
+  "textAlign": "LEFT",
+  "textColor": "#0F172A",
+  "topRow": 13,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "list_mobile_holdings",
+  "widgetName": "List_Mobile"
+}

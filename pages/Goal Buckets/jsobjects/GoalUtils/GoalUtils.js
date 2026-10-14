@@ -135,6 +135,14 @@ export default {
     const START = 210;
     const END = -30;
 
+    // One colour per bucket so the gauges are easy to tell apart.
+    const COLORS = {
+      'retirement': '#2563EB',
+      'Y-balloon': '#F59E0B',
+      'education': '#10B981',
+    };
+    const colorFor = (bucket) => COLORS[bucket] || '#2563EB';
+
     // [x, y] offset for a value on the arc, in % of the gauge radius. 0 sits at
     // the start angle (lower left), MAX at the end angle (lower right).
     const pointAt = (value, frac) => {
@@ -153,6 +161,7 @@ export default {
       const pct = target > 0 ? Math.min(100, (current / target) * 100) : 0;
       const center = [(((2 * i + 1) / (2 * n)) * 100).toFixed(2) + '%', '58%'];
       const radius = n > 2 ? '78%' : '85%';
+      const color = colorFor(bucket);
 
       // 1. The gauge itself (arc, progress, centre %, bucket + amounts).
       series.push({
@@ -171,7 +180,7 @@ export default {
         axisLabel: { show: false },
         pointer: { show: false },
         anchor: { show: false },
-        title: { offsetCenter: [0, '40%'], fontSize: 13, lineHeight: 17, color: '#0F172A' },
+        title: { offsetCenter: [0, '40%'], fontSize: 13, lineHeight: 17, color: color },
         detail: {
           valueAnimation: true,
           offsetCenter: [0, '8%'],
@@ -184,7 +193,7 @@ export default {
           {
             value: Math.round(pct),
             name: `${bucket}\n ${this.formatCurrencyWhole(target)}`,
-            itemStyle: { color: '#2563EB' },
+            itemStyle: { color: color },
           },
         ],
       });
@@ -237,7 +246,7 @@ export default {
           offsetCenter: pointAt(MAX, 1.18),
           fontSize: 11,
           fontWeight: 'bolder',
-          color: '#2563EB',
+          color: color,
           formatter: String(years[bucket] || ''),
         },
         data: [{ value: MAX }],

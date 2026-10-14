@@ -54,5 +54,68 @@ export default {
 
   getPnLColor(value) {
     return Number(value) >= 0 ? '#10b981' : '#ef4444';
+  },
+
+  // The full holdings list rendered as HTML for the mobile page. A table widget
+  // forces fixed column widths and scrolls sideways on a phone, so the list is
+  // rendered as a flexbox instead: it always fits the screen width, long names
+  // ellipsize, and only the page scrolls (vertically). The query already
+  // returns holdings ordered by 24h change ascending.
+  getHoldingsHtml() {
+    const esc = (v) =>
+      String(v === undefined || v === null ? '' : v)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    const money = (v) => this.formatCurrency(v);
+    const fmtChg = (v) => `${Number(v) >= 0 ? '+' : ''}${esc(money(v))}`;
+
+    const list = GetHoldings.data || [];
+
+    const head =
+      '<div style="display:flex;justify-content:space-between;gap:8px;' +
+      'padding:0 2px 6px;border-bottom:1px solid #E2E8F0;color:#94A3B8;' +
+      'font-size:0.68rem;font-weight:600;letter-spacing:.04em;' +
+      'text-transform:uppercase;"><span>Holding</span><span>24h &middot; Value</span></div>';
+
+    const body = list
+      .map((h) => {
+        const color = Number(h.dayChange) >= 0 ? '#10b981' : '#ef4444';
+        const pct = Number(h.dayChangePct) || 0;
+        const pctText = `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
+        return (
+          '<div style="display:flex;justify-content:space-between;align-items:center;' +
+          'gap:8px;padding:7px 2px;border-bottom:1px solid #f1f5f9;">' +
+          '<div style="min-width:0;flex:1 1 auto;overflow:hidden;">' +
+          '<div style="font-weight:600;font-size:0.8rem;color:#0f172a;' +
+          'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+          esc(h.symbol || '') +
+          '</div>' +
+          '<div style="font-size:0.7rem;color:#64748b;white-space:nowrap;' +
+          'overflow:hidden;text-overflow:ellipsis;">' +
+          esc(h.name || '') +
+          '</div>' +
+          '</div>' +
+          '<div style="flex:0 0 auto;text-align:right;white-space:nowrap;">' +
+          '<div style="font-weight:600;font-size:0.8rem;color:' +
+          color +
+          ';">' +
+          fmtChg(h.dayChange) +
+          ' &middot; ' +
+          pctText +
+          '</div>' +
+          '<div style="font-size:0.72rem;color:#334155;">' +
+          esc(money(h.currentValue)) +
+          '</div>' +
+          '</div>' +
+          '</div>'
+        );
+      })
+      .join('\n');
+
+    return (
+      '<div style="width:100%;font-family:inherit;">' + head + body + '</div>'
+    );
   }
 }
