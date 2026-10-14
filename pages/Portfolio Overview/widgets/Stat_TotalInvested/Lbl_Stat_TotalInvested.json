@@ -1,6 +1,7 @@
 {
   "bottomRow": 4,
   "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
   "fontSize": "0.75rem",
   "fontStyle": "BOLD",
   "isLoading": false,
@@ -10,7 +11,7 @@
   "parentId": "cvs_2228w0ox",
   "parentRowSpace": 10,
   "rightColumn": 64,
-  "text": "INVESTED CAPITAL (EUR)",
+  "text": "INVESTED CAPITAL ",
   "textColor": "#64748B",
   "topRow": 2,
   "type": "TEXT_WIDGET",

@@ -1,6 +1,7 @@
 {
   "bottomRow": 4,
   "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
   "fontSize": "0.75rem",
   "fontStyle": "BOLD",
   "isLoading": false,
@@ -10,7 +11,7 @@
   "parentId": "cvs_gu9bjpwq",
   "parentRowSpace": 10,
   "rightColumn": 63,
-  "text": "PORTFOLIO VALUE (EUR)",
+  "text": "PORTFOLIO VALUE ",
   "textColor": "#64748B",
   "topRow": 2,
   "type": "TEXT_WIDGET",

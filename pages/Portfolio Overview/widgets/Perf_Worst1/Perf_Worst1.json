@@ -5,7 +5,7 @@
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
   "children": [
     {
-      "bottomRow": 140,
+      "bottomRow": 130,
       "canExtend": false,
       "detachFromLayout": true,
       "dynamicBindingPathList": [],
@@ -26,11 +26,11 @@
   "dynamicBindingPathList": [],
   "isLoading": false,
   "isVisible": true,
-  "leftColumn": 49,
+  "leftColumn": 55,
   "parentColumnSpace": 1,
   "parentId": "0",
   "parentRowSpace": 10,
-  "rightColumn": 63,
+  "rightColumn": 64,
   "topRow": 28,
   "type": "CONTAINER_WIDGET",
   "version": 1,

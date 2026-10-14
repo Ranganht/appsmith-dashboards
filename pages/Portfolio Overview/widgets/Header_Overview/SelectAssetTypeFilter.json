@@ -1,5 +1,5 @@
 {
-  "bottomRow": 7,
+  "bottomRow": 6,
   "defaultOptionValue": "ALL",
   "dynamicBindingPathList": [],
   "dynamicTriggerPathList": [
@@ -63,7 +63,7 @@
       "value": "PROPERTY"
     }
   ],
-  "topRow": 1,
+  "topRow": 0,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "sel_ym12khz7",

@@ -183,7 +183,7 @@ export default {
         data: [
           {
             value: Math.round(pct),
-            name: `${bucket}\n${this.formatCurrencyWhole(current)} / ${this.formatCurrencyWhole(target)}`,
+            name: ` ${this.formatCurrencyWhole(target)}`,
             itemStyle: { color: '#2563EB' },
           },
         ],
