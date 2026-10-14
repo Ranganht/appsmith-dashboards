@@ -1073,7 +1073,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 50,
+  "rightColumn": 59,
   "searchKey": "",
   "tableData": "{{ GetHoldings.data }}",
   "textSize": "0.875rem",
