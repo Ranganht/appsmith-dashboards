@@ -18,14 +18,12 @@ export default {
     return Number(value) >= 0 ? '#10b981' : '#ef4444';
   },
 
-  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Combines the summary
-  // doc with the values present in the loaded holdings so the options never
-  // come up short, falling back to the full known set.
+  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Reads only the summary
+  // query - never GetHoldings - because GetHoldings depends on the widget that
+  // consumes these options, so reading GetHoldings.data here creates a cycle.
   getPortfolioOptions() {
     const fromSummary = GetPortfolioSummary.data?.[0]?.availablePortfolios || [];
-    const fromRows = this.getHoldings().map(h => h.portfolio).filter(Boolean);
-    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort((a, b) => a.localeCompare(b));
-    const list = seen.length ? seen : ['EUR', 'Samarth', 'USD'];
+    const list = fromSummary.length ? fromSummary : ['EUR', 'Samarth', 'USD'];
     const options = [{ label: 'All Portfolios', value: 'ALL' }];
     list.forEach(p => options.push({ label: p, value: p }));
     return options;

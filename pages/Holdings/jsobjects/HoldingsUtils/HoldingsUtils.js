@@ -28,27 +28,23 @@ export default {
     }));
   },
 
-  // Goal (purpose) buckets, e.g. Y-balloon, education, retirement. Combines the
-  // summary doc with the values present in the loaded holdings so the options never
-  // come up short, falling back to the full known set.
+  // Goal (purpose) buckets, e.g. Y-balloon, education, retirement. Reads only the
+  // summary query; GetHoldings depends on the goal filter widget, so reading
+  // GetHoldings.data here would create a cycle.
   getGoalOptions() {
     const fromSummary = GetPortfolioOverview.data?.[0]?.availableGoals || [];
-    const fromRows = (GetHoldings.data || []).map(r => r.goal).filter(Boolean);
-    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort();
-    const list = seen.length ? seen : ['Y-balloon', 'education', 'retirement'];
+    const list = fromSummary.length ? fromSummary : ['Y-balloon', 'education', 'retirement'];
     const options = [{ label: "All Goals", value: "ALL" }];
     list.forEach(g => options.push({ label: g, value: g }));
     return options;
   },
 
-  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Combines the summary doc
-  // with the values present in the loaded holdings so the options never come up
-  // short, falling back to the full known set.
+  // Owner/currency portfolios, e.g. EUR, USD, Samarth. Reads only the summary
+  // query; GetHoldings depends on the portfolio filter widget, so reading
+  // GetHoldings.data here would create a cycle.
   getPortfolioOptions() {
     const fromSummary = GetPortfolioOverview.data?.[0]?.availablePortfolios || [];
-    const fromRows = (GetHoldings.data || []).map(r => r.portfolio).filter(Boolean);
-    const seen = Array.from(new Set([...fromSummary, ...fromRows])).sort((a, b) => a.localeCompare(b));
-    const list = seen.length ? seen : ['EUR', 'Samarth', 'USD'];
+    const list = fromSummary.length ? fromSummary : ['EUR', 'Samarth', 'USD'];
     const options = [{ label: "All Portfolios", value: "ALL" }];
     list.forEach(p => options.push({ label: p, value: p }));
     return options;
