@@ -38,8 +38,8 @@
   ],
   "columnUpdatedAt": 1791920884135,
   "columnWidthMap": {
-    "change24": 200,
-    "name": 260,
+    "change24": 141,
+    "name": 165,
     "value": 160
   },
   "compactMode": "SHORT",
@@ -201,7 +201,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 32,
   "searchKey": "",
   "tableData": "{{ MobileUtils.getRows() }}",
   "textSize": "0.875rem",

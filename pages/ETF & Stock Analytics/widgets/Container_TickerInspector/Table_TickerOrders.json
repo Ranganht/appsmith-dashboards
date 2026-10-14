@@ -21,9 +21,10 @@
     "currency",
     "_id",
     "isin",
-    "updatedAt"
+    "updatedAt",
+    "goal"
   ],
-  "columnUpdatedAt": 1791471238994,
+  "columnUpdatedAt": 1791975363887,
   "dynamicBindingPathList": [
     {
       "key": "tableData"
@@ -90,6 +91,9 @@
     },
     {
       "key": "primaryColumns.updatedAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.goal.computedValue"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -329,6 +333,41 @@
       "label": "fingerprint",
       "notation": "standard",
       "originalId": "fingerprint",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "",
+      "width": 150
+    },
+    "goal": {
+      "alias": "goal",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table_TickerOrders.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"goal\"])) : goal })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "",
+      "id": "goal",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "goal",
+      "notation": "standard",
+      "originalId": "goal",
       "sticky": "",
       "textColor": "",
       "textSize": "",
