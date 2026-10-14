@@ -3,9 +3,6 @@
   "dynamicBindingPathList": [
     {
       "key": "text"
-    },
-    {
-      "key": "textColor"
     }
   ],
   "fontSize": "1rem",
