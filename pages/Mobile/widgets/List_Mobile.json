@@ -1,11 +1,11 @@
 {
-  "bottomRow": 120,
+  "bottomRow": 240,
   "dynamicBindingPathList": [
     {
       "key": "text"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "fontSize": "0.75rem",
   "isLoading": false,
   "isVisible": true,

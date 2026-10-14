@@ -86,18 +86,18 @@ export default {
         const pctText = `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
         return (
           '<div style="display:flex;justify-content:space-between;align-items:center;' +
-          'gap:8px;padding:7px 2px;border-bottom:1px solid #f1f5f9;">' +
-          '<div style="min-width:0;flex:1 1 auto;overflow:hidden;">' +
-          '<div style="font-weight:600;font-size:0.8rem;color:#0f172a;' +
+          'gap:8px;width:100%;padding:6px 2px;border-bottom:1px solid #F1F5F9;">' +
+          '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">' +
+          '<div style="font-weight:600;font-size:0.8rem;color:#0F172A;' +
           'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
           esc(h.symbol || '') +
           '</div>' +
-          '<div style="font-size:0.7rem;color:#64748b;white-space:nowrap;' +
+          '<div style="font-size:0.7rem;color:#64748B;white-space:nowrap;' +
           'overflow:hidden;text-overflow:ellipsis;">' +
           esc(h.name || '') +
           '</div>' +
           '</div>' +
-          '<div style="flex:0 0 auto;text-align:right;white-space:nowrap;">' +
+          '<div style="flex:0 0 auto;width:auto;text-align:right;white-space:nowrap;">' +
           '<div style="font-weight:600;font-size:0.8rem;color:' +
           color +
           ';">' +
