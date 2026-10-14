@@ -65,6 +65,12 @@ export default {
   // split/join rather than a regex literal: Appsmith's JS-object parser rejects
   // `replace(/.../g, ...)`, which made the whole collection fail to evaluate.
   // Everything below sticks to constructs already used elsewhere in this app.
+  //
+  // Row = 4 columns: [symbol + name] [current price] [24h change, % below] [value].
+  // The numeric columns use an explicit flex-basis so the header lines up with
+  // them; `width:auto` neutralises the `.sc-... div { width:100% }` rule the
+  // Text widget injects, which would otherwise make the first cell claim the
+  // whole row.
   getHoldingsHtml() {
     const esc = (v) =>
       String(v === undefined || v === null ? '' : v)
@@ -74,24 +80,32 @@ export default {
 
     const list = GetHoldings.data || [];
 
+    const CELL = 'width:auto;text-align:right;white-space:nowrap;overflow:hidden;';
+
     let html =
       '<div style="width:100%;font-family:inherit;">' +
-      '<div style="display:flex;justify-content:space-between;gap:8px;' +
+      '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
       'padding:0 2px 6px;border-bottom:1px solid #E2E8F0;color:#94A3B8;' +
       'font-size:0.68rem;font-weight:600;letter-spacing:.04em;' +
-      'text-transform:uppercase;"><span>Holding</span><span>24h &middot; Value</span></div>';
+      'text-transform:uppercase;">' +
+      '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">Holding</div>' +
+      '<div style="flex:0 0 68px;' + CELL + '">Price</div>' +
+      '<div style="flex:0 0 74px;' + CELL + '">24h</div>' +
+      '<div style="flex:0 0 78px;' + CELL + '">Value</div>' +
+      '</div>';
 
     for (let i = 0; i < list.length; i++) {
       const h = list[i];
       const chg = Number(h.dayChange) || 0;
       const pct = Number(h.dayChangePct) || 0;
       const color = chg >= 0 ? '#10b981' : '#ef4444';
-      const chgText = (chg >= 0 ? '+' : '') + this.formatCurrency(chg);
+      const money = this.formatCurrency(Math.abs(chg));
+      const chgText = chg >= 0 ? '+' + money : '-' + money;
       const pctText = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
 
       html +=
-        '<div style="display:flex;justify-content:space-between;align-items:center;' +
-        'gap:8px;width:100%;padding:6px 2px;border-bottom:1px solid #F1F5F9;">' +
+        '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
+        'padding:6px 2px;border-bottom:1px solid #F1F5F9;">' +
         '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">' +
         '<div style="font-weight:600;font-size:0.8rem;color:#0F172A;' +
         'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
@@ -102,15 +116,25 @@ export default {
         esc(h.name || '') +
         '</div>' +
         '</div>' +
-        '<div style="flex:0 0 auto;width:auto;text-align:right;white-space:nowrap;">' +
-        '<div style="font-weight:600;font-size:0.8rem;color:' +
+        '<div style="flex:0 0 68px;' + CELL + '">' +
+        '<div style="font-size:0.72rem;color:#334155;">' +
+        esc(this.formatCurrency(h.currentPrice)) +
+        '</div>' +
+        '</div>' +
+        '<div style="flex:0 0 74px;' + CELL + '">' +
+        '<div style="font-weight:600;font-size:0.76rem;color:' +
         color +
         ';">' +
         chgText +
-        ' &middot; ' +
+        '</div>' +
+        '<div style="font-size:0.7rem;color:' +
+        color +
+        ';">' +
         pctText +
         '</div>' +
-        '<div style="font-size:0.72rem;color:#334155;">' +
+        '</div>' +
+        '<div style="flex:0 0 78px;' + CELL + '">' +
+        '<div style="font-weight:600;font-size:0.76rem;color:#0F172A;">' +
         esc(this.formatCurrency(h.currentValue)) +
         '</div>' +
         '</div>' +
