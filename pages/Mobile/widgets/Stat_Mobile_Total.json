@@ -13,7 +13,7 @@
   "parentColumnSpace": 12.828125,
   "parentId": "0",
   "parentRowSpace": 10,
-  "rightColumn": 14,
+  "rightColumn": 23,
   "text": "{{ \"Total · \" + MobileUtils.formatCurrency(MobileUtils.getTotalValue()) }}",
   "textColor": "#0F172A",
   "topRow": 6,

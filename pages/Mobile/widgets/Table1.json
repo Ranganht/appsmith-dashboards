@@ -63,8 +63,8 @@
   "columnUpdatedAt": 1791984252048,
   "columnWidthMap": {
     "currentValue": 90,
-    "dayChangePct": 136,
-    "name": 209
+    "dayChangePct": 146,
+    "name": 199
   },
   "compactMode": "SHORT",
   "customIsLoading": false,
@@ -1073,7 +1073,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 59,
+  "rightColumn": 64,
   "searchKey": "",
   "tableData": "{{ GetHoldings.data }}",
   "textSize": "0.875rem",
