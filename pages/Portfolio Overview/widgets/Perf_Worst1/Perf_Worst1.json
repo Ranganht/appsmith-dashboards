@@ -1,7 +1,7 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderRadius": "0.375rem",
-  "bottomRow": 108,
+  "bottomRow": 41,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
   "children": [
     {
@@ -26,12 +26,12 @@
   "dynamicBindingPathList": [],
   "isLoading": false,
   "isVisible": true,
-  "leftColumn": 1,
+  "leftColumn": 49,
   "parentColumnSpace": 1,
   "parentId": "0",
   "parentRowSpace": 10,
-  "rightColumn": 21,
-  "topRow": 94,
+  "rightColumn": 63,
+  "topRow": 28,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "cnt_perf_worst1",

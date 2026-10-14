@@ -99,10 +99,28 @@ export default {
     };
   },
 
+  // Hardcoded target year shown at the end of each goal gauge, so the gauges
+  // read "where the bucket should be by when".
+  getTargetYears() {
+    return {
+      'retirement': 2051,
+      'Y-balloon': 2031,
+      'education': 2041,
+    };
+  },
+
   // One ECharts gauge per bucket, showing % of target achieved.
-  // Each gauge also prints the bucket name and "current / target" beneath it.
+  // Layout per gauge:
+  //   - centre        : "<pct>%"
+  //   - under centre  : "<bucket>" + "<current> / <target>"
+  //   - on the arc    : the current value, parked at the achieved percentage
+  //   - at the far end: the target year
+  // The arc labels are drawn with transparent, label-only gauge series so their
+  // positions are expressed relative to the gauge radius and therefore scale
+  // with the widget instead of being pinned to fixed pixels.
   getGaugeOption() {
     const targets = this.getTargets();
+    const years = this.getTargetYears();
     const list = GetGoalBuckets.data || [];
 
     const byBucket = {};
@@ -112,35 +130,52 @@ export default {
     });
 
     const buckets = Object.keys(targets);
-    const count = buckets.length || 1;
+    const n = buckets.length || 1;
+    const MAX = 100;
+    const START = 210;
+    const END = -30;
 
-    const series = buckets.map((bucket, i) => {
+    // [x, y] offset for a value on the arc, in % of the gauge radius. 0 sits at
+    // the start angle (lower left), MAX at the end angle (lower right).
+    const pointAt = (value, frac) => {
+      const t = MAX > 0 ? Math.max(0, Math.min(1, value / MAX)) : 0;
+      const rad = ((START - t * (START - END)) * Math.PI) / 180;
+      return [
+        (frac * Math.cos(rad) * 100).toFixed(1) + '%',
+        (-frac * Math.sin(rad) * 100).toFixed(1) + '%',
+      ];
+    };
+
+    const series = [];
+    buckets.forEach((bucket, i) => {
       const target = targets[bucket] || 0;
       const current = byBucket[bucket] || 0;
       const pct = target > 0 ? Math.min(100, (current / target) * 100) : 0;
-      const centerX = Number((((i + 0.5) * 100) / count).toFixed(2));
+      const center = [(((2 * i + 1) / (2 * n)) * 100).toFixed(2) + '%', '58%'];
+      const radius = n > 2 ? '78%' : '85%';
 
-      return {
+      // 1. The gauge itself (arc, progress, centre %, bucket + amounts).
+      series.push({
         type: 'gauge',
-        center: [`${centerX}%`, '58%'],
-        radius: '60%',
+        center,
+        radius,
+        startAngle: START,
+        endAngle: END,
         min: 0,
-        max: 100,
-        startAngle: 210,
-        endAngle: -30,
+        max: MAX,
         splitNumber: 5,
         progress: { show: true, roundCap: true, width: 14 },
-        axisLine: { lineStyle: { width: 14 } },
+        axisLine: { lineStyle: { width: 14, color: [[1, '#E2E8F0']] } },
         axisTick: { show: false },
-        splitLine: { length: 6, lineStyle: { width: 1 } },
+        splitLine: { length: 6, lineStyle: { width: 1, color: '#CBD5E1' } },
         axisLabel: { show: false },
         pointer: { show: false },
         anchor: { show: false },
-        title: { offsetCenter: [0, '40%'], fontSize: 13, color: '#0F172A' },
+        title: { offsetCenter: [0, '40%'], fontSize: 13, lineHeight: 17, color: '#0F172A' },
         detail: {
           valueAnimation: true,
           offsetCenter: [0, '8%'],
-          fontSize: 20,
+          fontSize: 22,
           fontWeight: 'bolder',
           formatter: '{value}%',
           color: '#0F172A',
@@ -149,9 +184,64 @@ export default {
           {
             value: Math.round(pct),
             name: `${bucket}\n${this.formatCurrencyWhole(current)} / ${this.formatCurrencyWhole(target)}`,
+            itemStyle: { color: '#2563EB' },
           },
         ],
-      };
+      });
+
+      // 2. Current value, parked on the arc at the achieved percentage.
+      series.push({
+        type: 'gauge',
+        center,
+        radius,
+        startAngle: START,
+        endAngle: END,
+        min: 0,
+        max: MAX,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: { show: false },
+        pointer: { show: false },
+        anchor: { show: false },
+        progress: { show: false },
+        title: { show: false },
+        detail: {
+          offsetCenter: pointAt(pct, 0.7),
+          fontSize: 11,
+          fontWeight: 'bolder',
+          color: '#0F172A',
+          formatter: this.formatCurrencyWhole(current),
+        },
+        data: [{ value: pct }],
+      });
+
+      // 3. Target year, parked at the end of the arc.
+      series.push({
+        type: 'gauge',
+        center,
+        radius,
+        startAngle: START,
+        endAngle: END,
+        min: 0,
+        max: MAX,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        axisLabel: { show: false },
+        pointer: { show: false },
+        anchor: { show: false },
+        progress: { show: false },
+        title: { show: false },
+        detail: {
+          offsetCenter: pointAt(MAX, 1.18),
+          fontSize: 11,
+          fontWeight: 'bolder',
+          color: '#2563EB',
+          formatter: String(years[bucket] || ''),
+        },
+        data: [{ value: MAX }],
+      });
     });
 
     return { series: series };

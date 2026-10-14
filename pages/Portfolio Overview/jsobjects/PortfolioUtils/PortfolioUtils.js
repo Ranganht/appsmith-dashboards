@@ -14,6 +14,13 @@ export default {
     return `${sign}${num.toFixed(2)}%`;
   },
 
+  // Signed money amount, e.g. "+€123,45" / "-€12,00".
+  formatSignedCurrency(value) {
+    const num = Number(value) || 0;
+    const sign = num >= 0 ? '+' : '-';
+    return `${sign}${this.formatCurrency(Math.abs(num))}`;
+  },
+
   getPnLColor(value) {
     return Number(value) >= 0 ? '#10b981' : '#ef4444';
   },
@@ -117,10 +124,22 @@ export default {
     const rows = this.getHoldings().map(row => {
       let pct = Number(row[metric]);
       if (isNaN(pct)) pct = Number(row.unrealizedPnLPct) || 0;
+      const value = Number(row.currentValue) || 0;
+      // Period returns only carry a percentage, so approximate the money move
+      // from the current value; "All Time" has a real amount already.
+      let amount;
+      if (metric === 'unrealizedPnLPct') {
+        amount = Number(row.unrealizedPnL) || 0;
+      } else if ((100 + pct) !== 0) {
+        amount = (value * pct) / (100 + pct);
+      } else {
+        amount = 0;
+      }
       return {
         symbol: row.symbol || '—',
         name: row.name || row.symbol || '',
         pct: pct,
+        amount: amount,
         color: pct >= 0 ? '#10b981' : '#ef4444',
       };
     }).sort((a, b) => b.pct - a.pct);

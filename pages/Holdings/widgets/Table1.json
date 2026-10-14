@@ -33,43 +33,46 @@
   },
   "columnOrder": [
     "name",
-    "customColumn1",
     "totalShares",
-    "customColumn2",
-    "customColumn3",
-    "customColumn4",
-    "symbol",
-    "nativeCurrentPrice",
-    "fxRate",
-    "nativeValue",
-    "totalInvested",
-    "baseCurrency",
     "avgPurchasePrice",
-    "lastUpdated",
-    "portfolio",
-    "goal",
-    "unrealizedPnL",
-    "currency",
-    "allocationPct",
-    "dayChangePct",
-    "weekChangePct",
     "currentPrice",
+    "dayChange",
+    "weekChange",
+    "currentValue",
+    "totalInvested",
+    "unrealizedPnL",
+    "_id",
+    "allocationPct",
     "assetType",
+    "baseCurrency",
+    "currency",
+    "dayChangePct",
+    "fxRate",
+    "lastUpdated",
+    "nativeCurrency",
+    "nativeCurrentPrice",
+    "nativeValue",
+    "portfolio",
+    "symbol",
     "tags",
     "unrealizedPnLPct",
-    "weekChange",
-    "nativeCurrency",
-    "dayChange",
-    "_id",
-    "currentValue",
-    "customColumn5"
+    "weekChangePct",
+    "goal",
+    "return1wPct",
+    "return1mPct",
+    "return1yPct"
   ],
   "columnUpdatedAt": 1791549412051,
   "columnWidthMap": {
-    "customColumn1": 101,
-    "customColumn2": 119,
     "name": 216,
-    "totalShares": 93
+    "totalShares": 93,
+    "avgPurchasePrice": 101,
+    "currentPrice": 119,
+    "dayChange": 150,
+    "weekChange": 150,
+    "currentValue": 130,
+    "totalInvested": 130,
+    "unrealizedPnL": 150
   },
   "compactMode": "SHORT",
   "customIsLoading": false,
@@ -82,70 +85,85 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.symbol.computedValue"
-    },
-    {
-      "key": "primaryColumns.fxRate.computedValue"
-    },
-    {
-      "key": "primaryColumns.nativeValue.computedValue"
-    },
-    {
-      "key": "primaryColumns.totalInvested.computedValue"
-    },
-    {
-      "key": "primaryColumns.baseCurrency.computedValue"
-    },
-    {
-      "key": "primaryColumns.avgPurchasePrice.computedValue"
-    },
-    {
-      "key": "primaryColumns.lastUpdated.computedValue"
-    },
-    {
-      "key": "primaryColumns.nativeCurrentPrice.computedValue"
-    },
-    {
-      "key": "primaryColumns.portfolio.computedValue"
-    },
-    {
-      "key": "primaryColumns.goal.computedValue"
-    },
-    {
-      "key": "primaryColumns.unrealizedPnL.computedValue"
-    },
-    {
-      "key": "primaryColumns.currency.computedValue"
+      "key": "primaryColumns._id.computedValue"
     },
     {
       "key": "primaryColumns.allocationPct.computedValue"
     },
     {
-      "key": "primaryColumns.dayChangePct.computedValue"
+      "key": "primaryColumns.assetType.computedValue"
     },
     {
-      "key": "primaryColumns.weekChangePct.computedValue"
+      "key": "primaryColumns.avgPurchasePrice.computedValue"
+    },
+    {
+      "key": "primaryColumns.baseCurrency.computedValue"
+    },
+    {
+      "key": "primaryColumns.currency.computedValue"
     },
     {
       "key": "primaryColumns.currentPrice.computedValue"
     },
     {
-      "key": "primaryColumns.assetType.computedValue"
+      "key": "primaryColumns.currentValue.computedValue"
+    },
+    {
+      "key": "primaryColumns.dayChange.computedValue"
+    },
+    {
+      "key": "primaryColumns.dayChange.textColor"
+    },
+    {
+      "key": "primaryColumns.dayChange.cellBackground"
+    },
+    {
+      "key": "primaryColumns.dayChangePct.computedValue"
+    },
+    {
+      "key": "primaryColumns.fxRate.computedValue"
+    },
+    {
+      "key": "primaryColumns.lastUpdated.computedValue"
+    },
+    {
+      "key": "primaryColumns.name.computedValue"
+    },
+    {
+      "key": "primaryColumns.nativeCurrency.computedValue"
+    },
+    {
+      "key": "primaryColumns.nativeCurrentPrice.computedValue"
+    },
+    {
+      "key": "primaryColumns.nativeValue.computedValue"
+    },
+    {
+      "key": "primaryColumns.portfolio.computedValue"
+    },
+    {
+      "key": "primaryColumns.symbol.computedValue"
     },
     {
       "key": "primaryColumns.tags.computedValue"
     },
     {
+      "key": "primaryColumns.totalInvested.computedValue"
+    },
+    {
       "key": "primaryColumns.totalShares.computedValue"
+    },
+    {
+      "key": "primaryColumns.unrealizedPnL.computedValue"
+    },
+    {
+      "key": "primaryColumns.unrealizedPnL.textColor"
+    },
+    {
+      "key": "primaryColumns.unrealizedPnL.cellBackground"
     },
     {
       "key": "primaryColumns.unrealizedPnLPct.computedValue"
@@ -154,52 +172,25 @@
       "key": "primaryColumns.weekChange.computedValue"
     },
     {
-      "key": "primaryColumns.nativeCurrency.computedValue"
+      "key": "primaryColumns.weekChange.textColor"
     },
     {
-      "key": "primaryColumns.dayChange.computedValue"
+      "key": "primaryColumns.weekChange.cellBackground"
     },
     {
-      "key": "primaryColumns.name.computedValue"
+      "key": "primaryColumns.weekChangePct.computedValue"
     },
     {
-      "key": "primaryColumns._id.computedValue"
+      "key": "primaryColumns.goal.computedValue"
     },
     {
-      "key": "primaryColumns.currentValue.computedValue"
+      "key": "primaryColumns.return1wPct.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn1.computedValue"
+      "key": "primaryColumns.return1mPct.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn2.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn3.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn4.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn5.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn5.textColor"
-    },
-    {
-      "key": "primaryColumns.customColumn5.cellBackground"
-    },
-    {
-      "key": "primaryColumns.customColumn4.cellBackground"
-    },
-    {
-      "key": "primaryColumns.customColumn4.textColor"
-    },
-    {
-      "key": "primaryColumns.customColumn3.cellBackground"
-    },
-    {
-      "key": "primaryColumns.customColumn3.textColor"
+      "key": "primaryColumns.return1yPct.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -207,22 +198,22 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.customColumn5.textColor"
+      "key": "primaryColumns.dayChange.textColor"
     },
     {
-      "key": "primaryColumns.customColumn5.cellBackground"
+      "key": "primaryColumns.dayChange.cellBackground"
     },
     {
-      "key": "primaryColumns.customColumn4.cellBackground"
+      "key": "primaryColumns.unrealizedPnL.textColor"
     },
     {
-      "key": "primaryColumns.customColumn4.textColor"
+      "key": "primaryColumns.unrealizedPnL.cellBackground"
     },
     {
-      "key": "primaryColumns.customColumn3.cellBackground"
+      "key": "primaryColumns.weekChange.textColor"
     },
     {
-      "key": "primaryColumns.customColumn3.textColor"
+      "key": "primaryColumns.weekChange.cellBackground"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -353,7 +344,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"avgPurchasePrice\"])) : avgPurchasePrice })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( HoldingsUtils.formatCurrency(currentRow.avgPurchasePrice) )) :  HoldingsUtils.formatCurrency(currentRow.avgPurchasePrice)  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -368,8 +359,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "avgPurchasePrice",
+      "isVisible": true,
+      "label": "Cost",
       "notation": "standard",
       "originalId": "avgPurchasePrice",
       "sticky": "",
@@ -449,7 +440,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"currentPrice\"])) : currentPrice })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( HoldingsUtils.formatCurrency(currentRow.currentPrice) )) :  HoldingsUtils.formatCurrency(currentRow.currentPrice)  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -464,8 +455,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "currentPrice",
+      "isVisible": true,
+      "label": "Current-Price",
       "notation": "standard",
       "originalId": "currentPrice",
       "sticky": "",
@@ -481,7 +472,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"currentValue\"])) : currentValue })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( HoldingsUtils.formatCurrency(currentRow.currentValue) )) :  HoldingsUtils.formatCurrency(currentRow.currentValue)  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -496,187 +487,11 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "currentValue",
+      "isVisible": true,
+      "label": "Value",
       "notation": "standard",
       "originalId": "currentValue",
       "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "customColumn1": {
-      "alias": "_sortCost",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "buttonStyle": "rgb(3, 179, 101)",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( HoldingsUtils.formatCurrency(currentRow.avgPurchasePrice) )) :  HoldingsUtils.formatCurrency(currentRow.avgPurchasePrice)  })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customColumn1",
-      "index": 10,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Cost",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "_sortCost",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "customColumn2": {
-      "alias": "_sortCurrentPrice",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "buttonStyle": "rgb(3, 179, 101)",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( HoldingsUtils.formatCurrency(currentRow.currentPrice) )) :  HoldingsUtils.formatCurrency(currentRow.currentPrice)  })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customColumn2",
-      "index": 10,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Current-Price",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "_sortCurrentPrice",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "customColumn3": {
-      "alias": "_sort24Hr",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "buttonStyle": "rgb(3, 179, 101)",
-      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.dayChange >= 0 ? \"#10b981\" : \"#ef4444\" )) :  currentRow.dayChange >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.dayChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.dayChange) + \" (\" + (currentRow.dayChangePct >= 0 ? \"+\" : \"\") + (currentRow.dayChangePct || 0).toFixed(2) + \"%)\" )) :  (currentRow.dayChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.dayChange) + \" (\" + (currentRow.dayChangePct >= 0 ? \"+\" : \"\") + (currentRow.dayChangePct || 0).toFixed(2) + \"%)\"  })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customColumn3",
-      "index": 10,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "24-HR",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "_sort24Hr",
-      "sticky": "",
-      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.dayChange >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  currentRow.dayChange >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "customColumn4": {
-      "alias": "_sortWeekly",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "buttonStyle": "rgb(3, 179, 101)",
-      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.weekChange || 0) >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  (currentRow.weekChange || 0) >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( ((currentRow.weekChange || 0) >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.weekChange || 0) + \" (\" + ((currentRow.weekChangePct || 0) >= 0 ? \"+\" : \"\") + (currentRow.weekChangePct || 0).toFixed(2) + \"%)\" )) :  ((currentRow.weekChange || 0) >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.weekChange || 0) + \" (\" + ((currentRow.weekChangePct || 0) >= 0 ? \"+\" : \"\") + (currentRow.weekChangePct || 0).toFixed(2) + \"%)\"  })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customColumn4",
-      "index": 10,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Weekly",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "_sortWeekly",
-      "sticky": "",
-      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.weekChange || 0) >= 0 ? \"#10b981\" : \"#ef4444\" )) :  (currentRow.weekChange || 0) >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "customColumn5": {
-      "alias": "_sortGain",
-      "allowCellWrapping": false,
-      "allowHeaderWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "buttonStyle": "rgb(3, 179, 101)",
-      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.unrealizedPnL >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  currentRow.unrealizedPnL >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.unrealizedPnL >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.unrealizedPnL) + \" (\" + (currentRow.unrealizedPnLPct >= 0 ? \"+\" : \"\") + (currentRow.unrealizedPnLPct || 0).toFixed(2) + \"%)\" )) :  (currentRow.unrealizedPnL >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.unrealizedPnL) + \" (\" + (currentRow.unrealizedPnLPct >= 0 ? \"+\" : \"\") + (currentRow.unrealizedPnLPct || 0).toFixed(2) + \"%)\"  })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "customColumn5",
-      "index": 10,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": true,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Gain",
-      "labelColor": "#FFFFFF",
-      "notation": "standard",
-      "originalId": "_sortGain",
-      "sticky": "",
-      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.unrealizedPnL >= 0 ? \"#10b981\" : \"#ef4444\" )) :  currentRow.unrealizedPnL >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -689,7 +504,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"dayChange\"])) : dayChange })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.dayChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.dayChange) + \" (\" + (currentRow.dayChangePct >= 0 ? \"+\" : \"\") + (currentRow.dayChangePct || 0).toFixed(2) + \"%)\" )) :  (currentRow.dayChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.dayChange) + \" (\" + (currentRow.dayChangePct >= 0 ? \"+\" : \"\") + (currentRow.dayChangePct || 0).toFixed(2) + \"%)\"  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -704,8 +519,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "dayChange",
+      "isVisible": true,
+      "label": "24-HR",
       "notation": "standard",
       "originalId": "dayChange",
       "sticky": "",
@@ -713,7 +528,9 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 150,
+      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.dayChange >= 0 ? \"#10b981\" : \"#ef4444\" )) :  currentRow.dayChange >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.dayChange >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  currentRow.dayChange >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}"
     },
     "dayChangePct": {
       "alias": "dayChangePct",
@@ -928,8 +745,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Value",
+      "isVisible": false,
+      "label": "nativeValue",
       "notation": "standard",
       "originalId": "nativeValue",
       "sticky": "",
@@ -1073,7 +890,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"totalShares\"])) : totalShares })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.totalShares )) :  currentRow.totalShares  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -1105,7 +922,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"unrealizedPnL\"])) : unrealizedPnL })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.unrealizedPnL >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.unrealizedPnL) + \" (\" + (currentRow.unrealizedPnLPct >= 0 ? \"+\" : \"\") + (currentRow.unrealizedPnLPct || 0).toFixed(2) + \"%)\" )) :  (currentRow.unrealizedPnL >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.unrealizedPnL) + \" (\" + (currentRow.unrealizedPnLPct >= 0 ? \"+\" : \"\") + (currentRow.unrealizedPnLPct || 0).toFixed(2) + \"%)\"  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -1120,8 +937,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "unrealizedPnL",
+      "isVisible": true,
+      "label": "Gain",
       "notation": "standard",
       "originalId": "unrealizedPnL",
       "sticky": "",
@@ -1129,7 +946,9 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 150,
+      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.unrealizedPnL >= 0 ? \"#10b981\" : \"#ef4444\" )) :  currentRow.unrealizedPnL >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.unrealizedPnL >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  currentRow.unrealizedPnL >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}"
     },
     "unrealizedPnLPct": {
       "alias": "unrealizedPnLPct",
@@ -1169,7 +988,7 @@
       "allowHeaderWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"weekChange\"])) : weekChange })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.weekChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.weekChange) + \" (\" + (currentRow.weekChangePct >= 0 ? \"+\" : \"\") + (currentRow.weekChangePct || 0).toFixed(2) + \"%)\" )) :  (currentRow.weekChange >= 0 ? \"+\" : \"\") + HoldingsUtils.formatCurrency(currentRow.weekChange) + \" (\" + (currentRow.weekChangePct >= 0 ? \"+\" : \"\") + (currentRow.weekChangePct || 0).toFixed(2) + \"%)\"  })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -1184,8 +1003,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "weekChange",
+      "isVisible": true,
+      "label": "Weekly",
       "notation": "standard",
       "originalId": "weekChange",
       "sticky": "",
@@ -1193,7 +1012,9 @@
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 150
+      "width": 150,
+      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.weekChange || 0) >= 0 ? \"#10b981\" : \"#ef4444\" )) :  (currentRow.weekChange || 0) >= 0 ? \"#10b981\" : \"#ef4444\"  })()}}",
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( (currentRow.weekChange || 0) >= 0 ? \"#ecfdf5\" : \"#fef2f2\" )) :  (currentRow.weekChange || 0) >= 0 ? \"#ecfdf5\" : \"#fef2f2\"  })()}}"
     },
     "weekChangePct": {
       "alias": "weekChangePct",
@@ -1258,13 +1079,109 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
+    },
+    "return1wPct": {
+      "alias": "return1wPct",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"return1wPct\"] )) :  currentRow[\"return1wPct\"]  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "return1wPct",
+      "index": 23,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "return1wPct",
+      "notation": "standard",
+      "originalId": "return1wPct",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "return1mPct": {
+      "alias": "return1mPct",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"return1mPct\"] )) :  currentRow[\"return1mPct\"]  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "return1mPct",
+      "index": 23,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "return1mPct",
+      "notation": "standard",
+      "originalId": "return1mPct",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "return1yPct": {
+      "alias": "return1yPct",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"return1yPct\"] )) :  currentRow[\"return1yPct\"]  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "return1yPct",
+      "index": 23,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "return1yPct",
+      "notation": "standard",
+      "originalId": "return1yPct",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{HoldingsUtils.getTableData()}}",
+  "tableData": "{{ GetHoldings.data }}",
   "textSize": "0.875rem",
   "topRow": 13,
   "totalRecordsCount": 0,

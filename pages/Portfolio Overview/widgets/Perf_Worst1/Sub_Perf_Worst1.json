@@ -1,5 +1,5 @@
 {
-  "bottomRow": 13,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "text"
@@ -15,8 +15,7 @@
   "parentRowSpace": 10,
   "rightColumn": 62,
   "text": "{{ PortfolioUtils.getPerformers().worst[0]?.name || '' }}",
-  "textColor": "#94A3B8",
-  "topRow": 11,
+  "topRow": 6,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "sub_perf_worst1",
