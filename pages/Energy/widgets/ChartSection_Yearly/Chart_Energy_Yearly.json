@@ -1,0 +1,36 @@
+{
+  "bottomRow": 29,
+  "chartData": {
+    "ser_geny": {
+      "color": "#22c55e",
+      "data": "{{ EnergyUtils.getYearGenerationData() }}",
+      "seriesName": "Solar generation (kWh)"
+    },
+    "ser_use": {
+      "color": "#8b5cf6",
+      "data": "{{ EnergyUtils.getYearUsageData() }}",
+      "seriesName": "Usage (kWh)"
+    }
+  },
+  "chartName": "Usage vs Generation",
+  "chartType": "AREA_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.ser_use.data"
+    },
+    {
+      "key": "chartData.ser_geny.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_energy_year",
+  "rightColumn": 64,
+  "topRow": 4,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_energy_year",
+  "widgetName": "Chart_Energy_Yearly"
+}

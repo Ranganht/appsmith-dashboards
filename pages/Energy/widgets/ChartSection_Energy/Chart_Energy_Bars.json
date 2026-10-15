@@ -1,0 +1,44 @@
+{
+  "bottomRow": 29,
+  "chartData": {
+    "ser_exp": {
+      "color": "#f97316",
+      "data": "{{ EnergyUtils.getExportData() }}",
+      "seriesName": "Export to grid (kWh)"
+    },
+    "ser_gen": {
+      "color": "#22c55e",
+      "data": "{{ EnergyUtils.getGenerationData() }}",
+      "seriesName": "Solar generated (kWh)"
+    },
+    "ser_imp": {
+      "color": "#3b82f6",
+      "data": "{{ EnergyUtils.getImportData() }}",
+      "seriesName": "Import from grid (kWh)"
+    }
+  },
+  "chartName": "Energy by day",
+  "chartType": "BAR_CHART",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.ser_imp.data"
+    },
+    {
+      "key": "chartData.ser_exp.data"
+    },
+    {
+      "key": "chartData.ser_gen.data"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentId": "cvs_energy_bars",
+  "rightColumn": 64,
+  "topRow": 4,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "chr_energy_bars",
+  "widgetName": "Chart_Energy_Bars"
+}

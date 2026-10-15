@@ -1,0 +1,24 @@
+{
+  "bottomRow": 11,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "0.7rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_gen",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "{{EnergyUtils.getPeriodLabel()}}",
+  "textColor": "#94A3B8",
+  "topRow": 8,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_energy_gen",
+  "widgetName": "Sub_Stat_Generated"
+}

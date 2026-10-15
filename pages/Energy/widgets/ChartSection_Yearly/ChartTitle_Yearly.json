@@ -1,0 +1,21 @@
+{
+  "bottomRow": 3,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_year",
+  "parentRowSpace": 10,
+  "rightColumn": 50,
+  "text": "Past 12 months · Usage vs Solar generation (kWh)",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_energy_year_title",
+  "widgetName": "ChartTitle_Yearly"
+}

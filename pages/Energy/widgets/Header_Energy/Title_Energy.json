@@ -1,0 +1,21 @@
+{
+  "bottomRow": 6,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_hdr",
+  "parentRowSpace": 10,
+  "rightColumn": 42,
+  "text": "⚡ Energy · Grid & Solar",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_energy_title",
+  "widgetName": "Title_Energy"
+}

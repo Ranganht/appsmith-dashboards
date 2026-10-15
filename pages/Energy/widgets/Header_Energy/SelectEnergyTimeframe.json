@@ -1,0 +1,52 @@
+{
+  "bottomRow": 6,
+  "defaultOptionValue": "7D",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "isFilterable": false,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Range",
+  "leftColumn": 46,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "Last 7 days",
+      "value": "7D"
+    },
+    {
+      "label": "Last 30 days",
+      "value": "1M"
+    },
+    {
+      "label": "Last 12 months",
+      "value": "1Y"
+    }
+  ],
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_hdr",
+  "parentRowSpace": 10,
+  "placeholderText": "Select range",
+  "rightColumn": 62,
+  "serverSideFiltering": false,
+  "sourceData": [
+    {
+      "label": "Last 7 days",
+      "value": "7D"
+    },
+    {
+      "label": "Last 30 days",
+      "value": "1M"
+    },
+    {
+      "label": "Last 12 months",
+      "value": "1Y"
+    }
+  ],
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_energy_range",
+  "widgetName": "SelectEnergyTimeframe"
+}

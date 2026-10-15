@@ -1,0 +1,25 @@
+{
+  "bottomRow": 3,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_bars",
+  "parentRowSpace": 10,
+  "rightColumn": 50,
+  "text": "{{EnergyUtils.getBarTitle()}}",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_energy_bars_title",
+  "widgetName": "ChartTitle_Energy"
+}

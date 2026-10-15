@@ -28,6 +28,10 @@
       "isDefault": false
     },
     {
+      "id": "Energy",
+      "isDefault": false
+    },
+    {
       "id": "Mobile",
       "isDefault": false
     }

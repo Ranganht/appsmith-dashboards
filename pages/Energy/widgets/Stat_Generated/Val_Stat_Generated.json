@@ -1,0 +1,24 @@
+{
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_energy_gen",
+  "parentRowSpace": 10,
+  "rightColumn": 61,
+  "text": "{{EnergyUtils.getGeneratedText()}}",
+  "textColor": "#0F172A",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_energy_gen",
+  "widgetName": "Val_Stat_Generated"
+}
