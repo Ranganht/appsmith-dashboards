@@ -1,10 +1,20 @@
 {
-  "bottomRow": 29,
+  "bottomRow": 33,
   "chartData": {
+    "ser_exp": {
+      "color": "#f97316",
+      "data": "{{ EnergyUtils.getYearExportData() }}",
+      "seriesName": "Export to grid (kWh)"
+    },
     "ser_geny": {
       "color": "#22c55e",
       "data": "{{ EnergyUtils.getYearGenerationData() }}",
       "seriesName": "Solar generation (kWh)"
+    },
+    "ser_imp": {
+      "color": "#3b82f6",
+      "data": "{{ EnergyUtils.getYearImportData() }}",
+      "seriesName": "Import from grid (kWh)"
     },
     "ser_use": {
       "color": "#8b5cf6",
@@ -12,14 +22,20 @@
       "seriesName": "Usage (kWh)"
     }
   },
-  "chartName": "Usage vs Generation",
+  "chartName": "Energy over 12 months",
   "chartType": "AREA_CHART",
   "dynamicBindingPathList": [
     {
-      "key": "chartData.ser_use.data"
+      "key": "chartData.ser_exp.data"
     },
     {
       "key": "chartData.ser_geny.data"
+    },
+    {
+      "key": "chartData.ser_imp.data"
+    },
+    {
+      "key": "chartData.ser_use.data"
     }
   ],
   "dynamicTriggerPathList": [],

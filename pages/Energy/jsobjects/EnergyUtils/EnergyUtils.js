@@ -145,10 +145,12 @@ export default {
     return this._points('generated');
   },
 
-  // ---- trailing 12-month area chart (usage vs generation) ----------------
+  // ---- trailing 12-month area chart --------------------------------------
 
   // Fixed 12-month daily window, independent of the range selector. Leading
   // days before the first record are trimmed so the chart starts with real data.
+  // Each point carries every series so they can be shown/overlaid independently
+  // from the chart legend.
   _yearPoints() {
     const map = this._byDay();
     const days = this._recentDays(365);
@@ -163,8 +165,10 @@ export default {
       const generated = row ? row.generated : 0;
       out.push({
         label: days[i].slice(5),
-        usage: this._round(imported + generated - exported),
+        imported: this._round(imported),
+        exported: this._round(exported),
         generated: this._round(generated),
+        usage: this._round(imported + generated - exported),
       });
     }
     return out;
@@ -176,6 +180,14 @@ export default {
 
   getYearGenerationData() {
     return this._yearPoints().map(b => ({ x: b.label, y: b.generated }));
+  },
+
+  getYearImportData() {
+    return this._yearPoints().map(b => ({ x: b.label, y: b.imported }));
+  },
+
+  getYearExportData() {
+    return this._yearPoints().map(b => ({ x: b.label, y: b.exported }));
   },
 
   // ---- stat cards --------------------------------------------------------

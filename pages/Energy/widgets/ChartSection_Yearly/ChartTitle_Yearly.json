@@ -11,7 +11,7 @@
   "parentId": "cvs_energy_year",
   "parentRowSpace": 10,
   "rightColumn": 50,
-  "text": "Past 12 months · Usage vs Solar generation (kWh)",
+  "text": "Past 12 months · Usage, generation, grid import & export (kWh)",
   "textColor": "#0F172A",
   "topRow": 1,
   "type": "TEXT_WIDGET",
