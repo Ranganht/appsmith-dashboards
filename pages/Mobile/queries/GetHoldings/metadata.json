@@ -50,7 +50,7 @@
             "data": ""
           },
           "query": {
-            "data": "{}"
+            "data": "{{\n  (() => {\n    const filter = {};\n    const goal = (typeof SelectBucketFilter !== 'undefined' && SelectBucketFilter.selectedOptionValue) ? SelectBucketFilter.selectedOptionValue : 'ALL';\n    const portfolio = (typeof SelectPortfolioFilter !== 'undefined' && SelectPortfolioFilter.selectedOptionValue) ? SelectPortfolioFilter.selectedOptionValue : 'ALL';\n    const assetType = (typeof SelectAssetTypeFilter !== 'undefined' && SelectAssetTypeFilter.selectedOptionValue) ? SelectAssetTypeFilter.selectedOptionValue : 'ALL';\n    if (portfolio && portfolio !== 'ALL') filter.portfolio = portfolio;\n    if (goal && goal !== 'ALL') filter.goal = goal;\n    if (assetType && assetType !== 'ALL') filter.assetType = assetType;\n    return filter;\n  })()\n}}"
           },
           "skip": {
             "data": ""
@@ -66,7 +66,7 @@
         },
         "misc": {
           "formToNativeQuery": {
-            "data": "{\n  \"find\": \"holdings\",\n  \"filter\": {},\n  \"sort\": {\"dayChangePct\": 1},\n  \"limit\": 500,\n  \"batchSize\": 100\n}",
+            "data": "{\n  \"find\": \"holdings\",\n  \"filter\": {{\n  (() => {\n    const filter = {};\n    const goal = (typeof SelectBucketFilter !== 'undefined' && SelectBucketFilter.selectedOptionValue) ? SelectBucketFilter.selectedOptionValue : 'ALL';\n    const portfolio = (typeof SelectPortfolioFilter !== 'undefined' && SelectPortfolioFilter.selectedOptionValue) ? SelectPortfolioFilter.selectedOptionValue : 'ALL';\n    const assetType = (typeof SelectAssetTypeFilter !== 'undefined' && SelectAssetTypeFilter.selectedOptionValue) ? SelectAssetTypeFilter.selectedOptionValue : 'ALL';\n    if (portfolio && portfolio !== 'ALL') filter.portfolio = portfolio;\n    if (goal && goal !== 'ALL') filter.goal = goal;\n    if (assetType && assetType !== 'ALL') filter.assetType = assetType;\n    return filter;\n  })()\n}},\n  \"sort\": {\"dayChangePct\": 1},\n  \"limit\": 500,\n  \"batchSize\": 100\n}",
             "status": "SUCCESS"
           }
         },
@@ -95,7 +95,11 @@
       "name": "PortfolioMongoDB",
       "pluginId": "mongo-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "formData.find.query.data"
+      }
+    ],
     "name": "GetHoldings",
     "pageId": "Mobile",
     "runBehaviour": "ON_PAGE_LOAD",

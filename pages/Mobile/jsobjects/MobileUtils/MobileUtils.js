@@ -31,6 +31,27 @@ export default {
     }));
   },
 
+  // Goal (purpose) buckets for the filter dropdown, e.g. Y-balloon, education,
+  // retirement. Reads only the summary query: GetHoldings depends on the filter
+  // widget, so reading GetHoldings.data here would create a cyclic dependency.
+  getGoalOptions() {
+    const fromSummary = GetPortfolioOverview.data?.[0]?.availableGoals || [];
+    const list = fromSummary.length ? fromSummary : ['Y-balloon', 'education', 'retirement'];
+    const options = [{ label: 'All Goals', value: 'ALL' }];
+    list.forEach((g) => options.push({ label: g, value: g }));
+    return options;
+  },
+
+  // Owner/currency portfolios for the filter dropdown, e.g. EUR, Samarth, USD.
+  // Same cycle-avoidance note as getGoalOptions above.
+  getPortfolioOptions() {
+    const fromSummary = GetPortfolioOverview.data?.[0]?.availablePortfolios || [];
+    const list = fromSummary.length ? fromSummary : ['EUR', 'Samarth', 'USD'];
+    const options = [{ label: 'All Portfolios', value: 'ALL' }];
+    list.forEach((p) => options.push({ label: p, value: p }));
+    return options;
+  },
+
   getTotalValue() {
     return (GetHoldings.data || []).reduce((sum, h) => sum + (Number(h.currentValue) || 0), 0);
   },
