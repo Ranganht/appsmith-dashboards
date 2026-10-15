@@ -1,11 +1,11 @@
 {
   "backgroundColor": "#FFFFFF",
   "borderRadius": "0.375rem",
-  "bottomRow": 85,
+  "bottomRow": 89,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
   "children": [
     {
-      "bottomRow": 300,
+      "bottomRow": 340,
       "canExtend": false,
       "detachFromLayout": true,
       "dynamicBindingPathList": [],
