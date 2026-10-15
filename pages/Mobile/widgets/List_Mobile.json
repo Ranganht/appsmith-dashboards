@@ -1,5 +1,5 @@
 {
-  "bottomRow": 179,
+  "bottomRow": 174,
   "dynamicBindingPathList": [
     {
       "key": "text"
@@ -19,7 +19,7 @@
   "text": "{{ MobileUtils.getHoldingsHtml() }}",
   "textAlign": "LEFT",
   "textColor": "#0F172A",
-  "topRow": 16,
+  "topRow": 11,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "list_mobile_holdings",

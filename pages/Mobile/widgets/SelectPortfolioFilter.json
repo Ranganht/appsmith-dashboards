@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 11,
   "boxShadow": "none",
   "defaultOptionValue": "ALL",
   "dynamicBindingPathList": [
@@ -59,7 +59,7 @@
   "rightColumn": 20,
   "serverSideFiltering": false,
   "sourceData": "{{ MobileUtils.getPortfolioOptions() }}",
-  "topRow": 9,
+  "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "mob_pf_filter",
