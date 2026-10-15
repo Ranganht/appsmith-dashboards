@@ -66,11 +66,13 @@ export default {
   // `replace(/.../g, ...)`, which made the whole collection fail to evaluate.
   // Everything below sticks to constructs already used elsewhere in this app.
   //
-  // Row = 4 columns: [symbol + name] [current price] [24h change, % below] [value].
+  // Row = 4 columns, each two lines tall:
+  //   [symbol / name] [price / qty] [24h € / 24h %] [value / overall %]
   // The numeric columns use an explicit flex-basis so the header lines up with
   // them; `width:auto` neutralises the `.sc-... div { width:100% }` rule the
   // Text widget injects, which would otherwise make the first cell claim the
-  // whole row.
+  // whole row. line-height is pinned so the row height, and therefore the fixed
+  // widget height in List_Mobile.json, stays predictable.
   getHoldingsHtml() {
     const esc = (v) =>
       String(v === undefined || v === null ? '' : v)
@@ -85,9 +87,9 @@ export default {
     let html =
       '<div style="width:100%;font-family:inherit;">' +
       '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
-      'padding:0 2px 6px;border-bottom:1px solid #E2E8F0;color:#94A3B8;' +
+      'padding:0 2px 4px;border-bottom:1px solid #E2E8F0;color:#94A3B8;' +
       'font-size:0.68rem;font-weight:600;letter-spacing:.04em;' +
-      'text-transform:uppercase;">' +
+      'text-transform:uppercase;line-height:1.15;">' +
       '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">Holding</div>' +
       '<div style="flex:0 0 68px;' + CELL + '">Price</div>' +
       '<div style="flex:0 0 74px;' + CELL + '">24h</div>' +
@@ -102,10 +104,15 @@ export default {
       const money = this.formatCurrency(Math.abs(chg));
       const chgText = chg >= 0 ? '+' + money : '-' + money;
       const pctText = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+      const qty = Number(h.totalShares) || 0;
+      const qtyText = String(parseFloat(qty.toFixed(4)));
+      const pnlPct = Number(h.unrealizedPnLPct) || 0;
+      const pnlColor = pnlPct >= 0 ? '#10b981' : '#ef4444';
+      const pnlPctText = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(2) + '%';
 
       html +=
         '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
-        'padding:6px 2px;border-bottom:1px solid #F1F5F9;">' +
+        'padding:3px 2px;border-bottom:1px solid #F1F5F9;line-height:1.15;">' +
         '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">' +
         '<div style="font-weight:600;font-size:0.8rem;color:#0F172A;' +
         'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
@@ -119,6 +126,9 @@ export default {
         '<div style="flex:0 0 68px;' + CELL + '">' +
         '<div style="font-size:0.72rem;color:#334155;">' +
         esc(this.formatCurrency(h.currentPrice)) +
+        '</div>' +
+        '<div style="font-size:0.7rem;color:#94A3B8;">' +
+        esc(qtyText) +
         '</div>' +
         '</div>' +
         '<div style="flex:0 0 74px;' + CELL + '">' +
@@ -136,6 +146,11 @@ export default {
         '<div style="flex:0 0 78px;' + CELL + '">' +
         '<div style="font-weight:600;font-size:0.76rem;color:#0F172A;">' +
         esc(this.formatCurrency(h.currentValue)) +
+        '</div>' +
+        '<div style="font-size:0.7rem;color:' +
+        pnlColor +
+        ';">' +
+        pnlPctText +
         '</div>' +
         '</div>' +
         '</div>';
