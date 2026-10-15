@@ -1,12 +1,13 @@
 {
-  "bottomRow": 176,
+  "bottomRow": 171,
   "dynamicBindingPathList": [
     {
       "key": "text"
     }
   ],
   "dynamicHeight": "FIXED",
-  "fontSize": "0.75rem",
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.875rem",
   "isLoading": false,
   "isVisible": true,
   "leftColumn": 0,
@@ -18,7 +19,7 @@
   "text": "{{ MobileUtils.getHoldingsHtml() }}",
   "textAlign": "LEFT",
   "textColor": "#0F172A",
-  "topRow": 13,
+  "topRow": 8,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "list_mobile_holdings",
