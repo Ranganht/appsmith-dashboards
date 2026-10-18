@@ -1,0 +1,25 @@
+{
+  "bottomRow": 30,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.75rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "rightColumn": 63,
+  "text": "{{XirrUtils.compute().note}}",
+  "textColor": "#64748B",
+  "topRow": 26,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_xirr_note",
+  "widgetName": "Note_XIRR"
+}

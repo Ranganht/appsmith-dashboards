@@ -1,0 +1,34 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isFilterable": true,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Scope value",
+  "leftColumn": 49,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_hdr",
+  "parentRowSpace": 10,
+  "placeholderText": "Select a portfolio or investment",
+  "rightColumn": 62,
+  "serverSideFiltering": false,
+  "sourceData": "{{ XirrUtils.getScopeValueOptions() }}",
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_xirr_value",
+  "widgetName": "SelectScopeValue"
+}

@@ -1,0 +1,52 @@
+{
+  "bottomRow": 7,
+  "defaultOptionValue": "HOLDINGS",
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "isFilterable": false,
+  "isLoading": false,
+  "isVisible": true,
+  "labelText": "Scope",
+  "leftColumn": 35,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": [
+    {
+      "label": "Portfolio",
+      "value": "PORTFOLIO"
+    },
+    {
+      "label": "Investment",
+      "value": "INVESTMENT"
+    },
+    {
+      "label": "Current holdings",
+      "value": "HOLDINGS"
+    }
+  ],
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_hdr",
+  "parentRowSpace": 10,
+  "placeholderText": "Select scope",
+  "rightColumn": 48,
+  "serverSideFiltering": false,
+  "sourceData": [
+    {
+      "label": "Portfolio",
+      "value": "PORTFOLIO"
+    },
+    {
+      "label": "Investment",
+      "value": "INVESTMENT"
+    },
+    {
+      "label": "Current holdings",
+      "value": "HOLDINGS"
+    }
+  ],
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sel_xirr_type",
+  "widgetName": "SelectScopeType"
+}

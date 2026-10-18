@@ -1,0 +1,21 @@
+{
+  "bottomRow": 7,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.7rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_hdr",
+  "parentRowSpace": 10,
+  "rightColumn": 34,
+  "text": "Annualized return of every trade in scope, converted to EUR at trade-date FX. Cashflows are trades only — dividends are not tracked.",
+  "textColor": "#64748B",
+  "topRow": 4,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_xirr_sub",
+  "widgetName": "Subtitle_XIRR"
+}

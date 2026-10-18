@@ -1,0 +1,21 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.125rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 2,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_hdr",
+  "parentRowSpace": 10,
+  "rightColumn": 34,
+  "text": "XIRR — money-weighted annual return",
+  "textColor": "#0F172A",
+  "topRow": 1,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "txt_xirr_title",
+  "widgetName": "Title_XIRR"
+}

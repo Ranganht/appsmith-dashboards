@@ -1,0 +1,21 @@
+{
+  "bottomRow": 15,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.68rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_2",
+  "parentRowSpace": 10,
+  "rightColumn": 14,
+  "text": "capital deployed",
+  "textColor": "#94A3B8",
+  "topRow": 12,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_xirr_2",
+  "widgetName": "Sub_Stat_Invested"
+}

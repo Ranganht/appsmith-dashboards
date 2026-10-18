@@ -1,0 +1,28 @@
+{
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_1",
+  "parentRowSpace": 10,
+  "rightColumn": 14,
+  "text": "{{XirrUtils.xirrText()}}",
+  "textColor": "{{XirrUtils.getXirrColor()}}",
+  "topRow": 5,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_xirr_1",
+  "widgetName": "Val_Stat_Xirr"
+}

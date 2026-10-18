@@ -1,0 +1,28 @@
+{
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_4",
+  "parentRowSpace": 10,
+  "rightColumn": 13,
+  "text": "{{XirrUtils.gainText()}}",
+  "textColor": "{{XirrUtils.getGainColor()}}",
+  "topRow": 5,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "val_xirr_4",
+  "widgetName": "Val_Stat_Gain"
+}

@@ -1,0 +1,21 @@
+{
+  "bottomRow": 5,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.7rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_3",
+  "parentRowSpace": 10,
+  "rightColumn": 14,
+  "text": "PROCEEDS + VALUE",
+  "textColor": "#64748B",
+  "topRow": 2,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "lbl_xirr_3",
+  "widgetName": "Lbl_Stat_Returned"
+}

@@ -1,0 +1,25 @@
+{
+  "bottomRow": 15,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.68rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_4",
+  "parentRowSpace": 10,
+  "rightColumn": 13,
+  "text": "{{XirrUtils.getGainSub()}}",
+  "textColor": "#94A3B8",
+  "topRow": 12,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_xirr_4",
+  "widgetName": "Sub_Stat_Gain"
+}

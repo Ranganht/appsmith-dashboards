@@ -1,0 +1,25 @@
+{
+  "bottomRow": 15,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontSize": "0.68rem",
+  "fontStyle": "NORMAL",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 1,
+  "parentColumnSpace": 1,
+  "parentId": "cvs_xirr_1",
+  "parentRowSpace": 10,
+  "rightColumn": 14,
+  "text": "{{XirrUtils.getPeriodLabel()}}",
+  "textColor": "#94A3B8",
+  "topRow": 12,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sub_xirr_1",
+  "widgetName": "Sub_Stat_Xirr"
+}
