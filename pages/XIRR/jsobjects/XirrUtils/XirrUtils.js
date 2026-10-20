@@ -102,8 +102,8 @@ export default {
   },
 
   formatCurrency(val) {
-    if (val === undefined || val === null || isNaN(Number(val))) return '€0,00';
-    return '€' + Number(val).toLocaleString('de-DE', {
+    if (val === undefined || val === null || isNaN(Number(val))) return '₹0.00';
+    return '₹' + Number(val).toLocaleString('en-IN', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
@@ -210,8 +210,11 @@ export default {
   },
 
   // XIRR for the selected scope: every trade in scope as a signed cashflow in
-  // the base currency (BUY −, SELL +) plus the current market value of the
-  // scope's open positions as a closing inflow "today".
+  // INR (BUY −, SELL plus the current market value of the scope's open
+  // positions as a closing inflow "today"). Rupee trades use their native
+  // totalAmount — exact by construction; every other cashflow and the closing
+  // value convert from the base currency at the rate of the day, using the
+  // INREUR series each sync persists to fx_rates (query GetXirrFx).
   compute() {
     const type = this._scopeType();
     const value = this._scopeValue();
@@ -219,6 +222,40 @@ export default {
     const holdings = this._holdings();
     const until = new Date().toISOString().slice(0, 10);
     const symbolScope = type === 'INVESTMENT' ? String(value || '').toUpperCase() : null;
+
+    // fx_rates stores pairs as loaded against the base currency: INREUR is
+    // EUR per 1 INR. Find the rupee series once for this computation.
+    const fxRows = (typeof GetXirrFx !== 'undefined' && GetXirrFx.data) ? GetXirrFx.data : [];
+    let inrSeries = null;
+    for (let i = 0; i < fxRows.length; i++) {
+      if (fxRows[i].pair === 'INREUR' && fxRows[i].points && fxRows[i].points.length > 0) {
+        inrSeries = fxRows[i].points;
+        break;
+      }
+    }
+    // Last EUR-per-INR rate at or before `day`: FX markets close at weekends
+    // and holidays, so an exact hit is not guaranteed; dates before the series
+    // reuse the earliest observation (same rule as the backend's FxService).
+    const eurPerInrOn = (day) => {
+      if (!inrSeries) return null;
+      let lo = 0;
+      let hi = inrSeries.length - 1;
+      let idx = -1;
+      while (lo <= hi) {
+        const mid = (lo + hi) >> 1;
+        if (inrSeries[mid][0] <= day) {
+          idx = mid;
+          lo = mid + 1;
+        } else {
+          hi = mid - 1;
+        }
+      }
+      const rate = Number(idx >= 0 ? inrSeries[idx][1] : inrSeries[0][1]);
+      return rate > 0 ? rate : null;
+    };
+    const latestEurPerInr = inrSeries
+      ? Number(inrSeries[inrSeries.length - 1][1]) || null
+      : null;
 
     let trades = [];
     if (type === 'HOLDINGS') {
@@ -230,24 +267,42 @@ export default {
       trades = symbolScope ? txs.filter((t) => this._sym(t) === symbolScope) : [];
     }
 
-    let terminal = 0;
+    // Closing inflow: the scope's holdings currentValue is in the base
+    // currency, so it converts at the latest rate rather than a trade date.
+    let terminalBase = 0;
     holdings.forEach((h) => {
-      if (type === 'HOLDINGS') terminal += Number(h.currentValue) || 0;
+      if (type === 'HOLDINGS') terminalBase += Number(h.currentValue) || 0;
       else if (type === 'PORTFOLIO') {
-        if (this._port(h) === value) terminal += Number(h.currentValue) || 0;
+        if (this._port(h) === value) terminalBase += Number(h.currentValue) || 0;
       } else if (this._sym(h) === symbolScope) {
-        terminal += Number(h.currentValue) || 0;
+        terminalBase += Number(h.currentValue) || 0;
       }
     });
+    let terminalUnconverted = false;
+    let terminal = terminalBase;
+    if (terminalBase > 0) {
+      if (latestEurPerInr) terminal = terminalBase / latestEurPerInr;
+      else terminalUnconverted = true;
+    }
 
     let unconverted = 0;
     const flows = [];
     trades.forEach((t) => {
-      const hasBase = t.amountBase !== undefined && t.amountBase !== null;
-      if (!hasBase) unconverted++;
-      const base = hasBase ? Number(t.amountBase) : (Number(t.totalAmount) || 0);
       const day = this._day(t.date);
-      if (day) flows.push({ date: day, amount: t.type === 'SELL' ? base : -base });
+      if (!day) return;
+      const cur = String(t.currency || '').toUpperCase();
+      let inr = null;
+      if (cur === 'INR' && t.totalAmount !== undefined && t.totalAmount !== null) {
+        inr = Number(t.totalAmount);
+      } else if (t.amountBase !== undefined && t.amountBase !== null) {
+        const rate = eurPerInrOn(day);
+        if (rate) inr = Number(t.amountBase) / rate;
+      }
+      if (inr === null || isNaN(inr)) {
+        unconverted++;
+        inr = Number(t.totalAmount) || 0;
+      }
+      flows.push({ date: day, amount: t.type === 'SELL' ? inr : -inr });
     });
     if (terminal > 0) flows.push({ date: until, amount: terminal });
     flows.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
@@ -268,7 +323,10 @@ export default {
     } else if (unconverted > 0) {
       note =
         unconverted + ' of ' + trades.length +
-        ' trades have no base-currency amount yet — run a sync to convert them at trade-date FX.';
+        ' trades could not be converted to INR yet — run a sync so fx_rates carries their rate series.';
+    } else if (terminalUnconverted) {
+      note =
+        'fx_rates has no INR series yet, so the closing value is shown unconverted. Run a sync to fix.';
     } else if (xirr === null) {
       note =
         'No annualized rate: the cashflows do not bracket a solution (e.g. an investment that only ever had outflows — a write-off).';

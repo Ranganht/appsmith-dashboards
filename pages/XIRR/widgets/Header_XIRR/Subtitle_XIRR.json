@@ -11,7 +11,7 @@
   "parentId": "cvs_xirr_hdr",
   "parentRowSpace": 10,
   "rightColumn": 34,
-  "text": "Annualized return of every trade in scope, converted to EUR at trade-date FX. Cashflows are trades only — dividends are not tracked.",
+  "text": "Annualized return of every trade in scope, reported in INR — rupee trades at their native amount, other currencies converted at each trade date's FX. Cashflows are trades only — dividends are not tracked.",
   "textColor": "#64748B",
   "topRow": 3,
   "type": "TEXT_WIDGET",
