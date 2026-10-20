@@ -1,5 +1,5 @@
 {
-  "bottomRow": 4,
+  "bottomRow": 3,
   "dynamicBindingPathList": [],
   "dynamicTriggerPathList": [],
   "fontSize": "1.125rem",
@@ -13,7 +13,7 @@
   "rightColumn": 34,
   "text": "XIRR — money-weighted annual return",
   "textColor": "#0F172A",
-  "topRow": 1,
+  "topRow": 0,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "txt_xirr_title",

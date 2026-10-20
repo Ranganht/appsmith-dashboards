@@ -1,5 +1,5 @@
 {
-  "bottomRow": 15,
+  "bottomRow": 12,
   "dynamicBindingPathList": [
     {
       "key": "text"
@@ -10,14 +10,14 @@
   "fontStyle": "NORMAL",
   "isLoading": false,
   "isVisible": true,
-  "leftColumn": 1,
+  "leftColumn": 0,
   "parentColumnSpace": 1,
   "parentId": "cvs_xirr_1",
   "parentRowSpace": 10,
-  "rightColumn": 14,
+  "rightColumn": 64,
   "text": "{{XirrUtils.getPeriodLabel()}}",
   "textColor": "#94A3B8",
-  "topRow": 12,
+  "topRow": 9,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "sub_xirr_1",

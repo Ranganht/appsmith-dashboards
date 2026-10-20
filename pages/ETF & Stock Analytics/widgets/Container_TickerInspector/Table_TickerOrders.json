@@ -22,9 +22,10 @@
     "_id",
     "isin",
     "updatedAt",
-    "goal"
+    "goal",
+    "amountBase"
   ],
-  "columnUpdatedAt": 1791975363887,
+  "columnUpdatedAt": 1792407991689,
   "dynamicBindingPathList": [
     {
       "key": "tableData"
@@ -94,6 +95,9 @@
     },
     {
       "key": "primaryColumns.goal.computedValue"
+    },
+    {
+      "key": "primaryColumns.amountBase.computedValue"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -129,6 +133,41 @@
       "label": "_id",
       "notation": "standard",
       "originalId": "_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "",
+      "width": 150
+    },
+    "amountBase": {
+      "alias": "amountBase",
+      "allowCellWrapping": false,
+      "allowHeaderWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table_TickerOrders.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"amountBase\"])) : amountBase })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "",
+      "id": "amountBase",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "amountBase",
+      "notation": "standard",
+      "originalId": "amountBase",
       "sticky": "",
       "textColor": "",
       "textSize": "",

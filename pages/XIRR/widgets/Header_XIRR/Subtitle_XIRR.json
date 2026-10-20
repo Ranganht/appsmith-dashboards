@@ -1,5 +1,5 @@
 {
-  "bottomRow": 7,
+  "bottomRow": 6,
   "dynamicBindingPathList": [],
   "dynamicTriggerPathList": [],
   "fontSize": "0.7rem",
@@ -13,7 +13,7 @@
   "rightColumn": 34,
   "text": "Annualized return of every trade in scope, converted to EUR at trade-date FX. Cashflows are trades only — dividends are not tracked.",
   "textColor": "#64748B",
-  "topRow": 4,
+  "topRow": 3,
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "txt_xirr_sub",
