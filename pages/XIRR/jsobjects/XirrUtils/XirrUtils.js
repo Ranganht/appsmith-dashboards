@@ -101,9 +101,17 @@ export default {
     return options;
   },
 
+  // Amount in the current scope's report currency (compute().currency):
+  // ₹ en-IN for INR scopes, $ en-US for USD, € de-DE otherwise (base).
   formatCurrency(val) {
-    if (val === undefined || val === null || isNaN(Number(val))) return '₹0.00';
-    return '₹' + Number(val).toLocaleString('en-IN', {
+    const cur = this.compute().currency;
+    const fmt = {
+      INR: ['₹', 'en-IN'],
+      USD: ['$', 'en-US'],
+      EUR: ['€', 'de-DE'],
+    }[cur] || ['€', 'de-DE'];
+    const n = Number(val);
+    return fmt[0] + (isNaN(n) ? 0 : n).toLocaleString(fmt[1], {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
@@ -209,12 +217,14 @@ export default {
     return (lo + hi) / 2;
   },
 
-  // XIRR for the selected scope: every trade in scope as a signed cashflow in
-  // INR (BUY −, SELL plus the current market value of the scope's open
-  // positions as a closing inflow "today"). Rupee trades use their native
-  // totalAmount — exact by construction; every other cashflow and the closing
-  // value convert from the base currency at the rate of the day, using the
-  // INREUR series each sync persists to fx_rates (query GetXirrFx).
+  // XIRR for the selected scope: every trade in scope as a signed cashflow
+  // plus the current market value of the scope's open positions as a closing
+  // inflow "today". Reported in the SCOPE'S OWN currency: when every trade in
+  // scope shares one currency the cashflows are that currency's native
+  // amounts (exact by construction); mixed or empty scopes fall back to the
+  // base currency (EUR). Cross-currency amounts convert from the base at the
+  // rate of the day, using the series each sync persists to fx_rates
+  // (query GetXirrFx: INREUR = EUR per 1 INR, USDEUR = EUR per 1 USD).
   compute() {
     const type = this._scopeType();
     const value = this._scopeValue();
@@ -222,40 +232,45 @@ export default {
     const holdings = this._holdings();
     const until = new Date().toISOString().slice(0, 10);
     const symbolScope = type === 'INVESTMENT' ? String(value || '').toUpperCase() : null;
+    // Reporting (base) currency — matches the backend's BASE_CURRENCY; the
+    // amountBase / currentValue fields the query feeds us are denominated in it.
+    const BASE = 'EUR';
 
-    // fx_rates stores pairs as loaded against the base currency: INREUR is
-    // EUR per 1 INR. Find the rupee series once for this computation.
     const fxRows = (typeof GetXirrFx !== 'undefined' && GetXirrFx.data) ? GetXirrFx.data : [];
-    let inrSeries = null;
-    for (let i = 0; i < fxRows.length; i++) {
-      if (fxRows[i].pair === 'INREUR' && fxRows[i].points && fxRows[i].points.length > 0) {
-        inrSeries = fxRows[i].points;
-        break;
+    const seriesFor = (code) => {
+      for (let i = 0; i < fxRows.length; i++) {
+        if (fxRows[i].pair === code && fxRows[i].points && fxRows[i].points.length > 0) {
+          return fxRows[i].points;
+        }
       }
-    }
-    // Last EUR-per-INR rate at or before `day`: FX markets close at weekends
+      return null;
+    };
+    // Last base-per-unit rate at or before `day`: FX markets close at weekends
     // and holidays, so an exact hit is not guaranteed; dates before the series
     // reuse the earliest observation (same rule as the backend's FxService).
-    const eurPerInrOn = (day) => {
-      if (!inrSeries) return null;
+    const rateOn = (series, day) => {
+      if (!series) return null;
       let lo = 0;
-      let hi = inrSeries.length - 1;
+      let hi = series.length - 1;
       let idx = -1;
       while (lo <= hi) {
         const mid = (lo + hi) >> 1;
-        if (inrSeries[mid][0] <= day) {
+        if (series[mid][0] <= day) {
           idx = mid;
           lo = mid + 1;
         } else {
           hi = mid - 1;
         }
       }
-      const rate = Number(idx >= 0 ? inrSeries[idx][1] : inrSeries[0][1]);
+      const rate = Number(idx >= 0 ? series[idx][1] : series[0][1]);
       return rate > 0 ? rate : null;
     };
-    const latestEurPerInr = inrSeries
-      ? Number(inrSeries[inrSeries.length - 1][1]) || null
-      : null;
+    // Base-per-1-`cur` pair series: INR -> INREUR, USD -> USDEUR.
+    const seriesForCur = (cur) => (cur === BASE ? null : seriesFor(cur + BASE));
+    // Base -> `cur` on `day`: 1 inside base, the day's rate otherwise, null
+    // when fx_rates does not carry the series yet.
+    const baseToCurOn = (cur, day) =>
+      cur === BASE ? 1 : rateOn(seriesForCur(cur), day);
 
     let trades = [];
     if (type === 'HOLDINGS') {
@@ -266,6 +281,17 @@ export default {
     } else {
       trades = symbolScope ? txs.filter((t) => this._sym(t) === symbolScope) : [];
     }
+
+    // Report currency: a scope whose trades are all in one currency is
+    // reported in that currency; anything mixed (or empty) falls back to the
+    // base currency — e.g. PORTFOLIO INR reports ₹, PORTFOLIO USD $, and the
+    // all-open HOLDINGS scope or the mixed Samarth portfolio report €.
+    const curSet = {};
+    trades.forEach((t) => {
+      if (t.currency) curSet[String(t.currency).toUpperCase()] = true;
+    });
+    const curKeys = Object.keys(curSet);
+    const currency = curKeys.length === 1 ? curKeys[0] : BASE;
 
     // Closing inflow: the scope's holdings currentValue is in the base
     // currency, so it converts at the latest rate rather than a trade date.
@@ -280,8 +306,9 @@ export default {
     });
     let terminalUnconverted = false;
     let terminal = terminalBase;
-    if (terminalBase > 0) {
-      if (latestEurPerInr) terminal = terminalBase / latestEurPerInr;
+    if (terminalBase > 0 && currency !== BASE) {
+      const latest = rateOn(seriesForCur(currency), until);
+      if (latest) terminal = terminalBase / latest;
       else terminalUnconverted = true;
     }
 
@@ -291,18 +318,19 @@ export default {
       const day = this._day(t.date);
       if (!day) return;
       const cur = String(t.currency || '').toUpperCase();
-      let inr = null;
-      if (cur === 'INR' && t.totalAmount !== undefined && t.totalAmount !== null) {
-        inr = Number(t.totalAmount);
+      let amt = null;
+      if (cur === currency && t.totalAmount !== undefined && t.totalAmount !== null) {
+        // Same currency as the report: the broker's own figure, exact.
+        amt = Number(t.totalAmount);
       } else if (t.amountBase !== undefined && t.amountBase !== null) {
-        const rate = eurPerInrOn(day);
-        if (rate) inr = Number(t.amountBase) / rate;
+        const rate = baseToCurOn(currency, day);
+        if (rate) amt = Number(t.amountBase) / rate;
       }
-      if (inr === null || isNaN(inr)) {
+      if (amt === null || isNaN(amt)) {
         unconverted++;
-        inr = Number(t.totalAmount) || 0;
+        amt = Number(t.totalAmount) || 0;
       }
-      flows.push({ date: day, amount: t.type === 'SELL' ? inr : -inr });
+      flows.push({ date: day, amount: t.type === 'SELL' ? amt : -amt });
     });
     if (terminal > 0) flows.push({ date: until, amount: terminal });
     flows.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
@@ -323,10 +351,11 @@ export default {
     } else if (unconverted > 0) {
       note =
         unconverted + ' of ' + trades.length +
-        ' trades could not be converted to INR yet — run a sync so fx_rates carries their rate series.';
+        ' trades lack a base amount — run a sync so they convert to ' + currency + '.';
     } else if (terminalUnconverted) {
       note =
-        'fx_rates has no INR series yet, so the closing value is shown unconverted. Run a sync to fix.';
+        'fx_rates has no ' + currency + BASE + ' series yet, so the closing value is shown in ' +
+        BASE + '. Run a sync to fix.';
     } else if (xirr === null) {
       note =
         'No annualized rate: the cashflows do not bracket a solution (e.g. an investment that only ever had outflows — a write-off).';
@@ -335,6 +364,7 @@ export default {
     return {
       ok: xirr !== null,
       xirr: xirr,
+      currency: currency,
       flows: flows.length,
       invested: invested,
       returned: returned,
