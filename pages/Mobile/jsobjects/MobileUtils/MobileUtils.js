@@ -80,8 +80,14 @@ export default {
   // The full holdings list rendered as HTML for the mobile page. A table widget
   // forces fixed column widths and scrolls sideways on a phone, so the list is
   // rendered as a flexbox instead: it always fits the screen width, long names
-  // ellipsize, and only the page scrolls (vertically). The query already
-  // returns holdings ordered by 24h change ascending.
+  // ellipsize, and only the page scrolls (vertically).
+  //
+  // The header row itself lives in four HdrSort_* buttons above this widget
+  // (Appsmith Text widgets cannot receive clicks); tapping any of them toggles
+  // getSortMode. Rows are then sorted client-side: 'today' by dayChangePct —
+  // the order GetHoldings returns, worst first — 'overall' by the total
+  // unrealized % gain/loss, same direction. Ties fall back to the symbol so
+  // the order is stable across re-renders.
   // Escape the few characters that would break the markup. Written with
   // split/join rather than a regex literal: Appsmith's JS-object parser rejects
   // `replace(/.../g, ...)`, which made the whole collection fail to evaluate.
@@ -89,11 +95,18 @@ export default {
   //
   // Row = 4 columns, each two lines tall:
   //   [symbol / name] [price / qty] [24h € / 24h %] [value / overall %]
-  // The numeric columns use an explicit flex-basis so the header lines up with
-  // them; `width:auto` neutralises the `.sc-... div { width:100% }` rule the
-  // Text widget injects, which would otherwise make the first cell claim the
-  // whole row. line-height is pinned so the row height, and therefore the fixed
-  // widget height in List_Mobile.json, stays predictable.
+  //
+  // The numeric columns use a flex-basis expressed as a percentage of the row:
+  // 17.1875% / 18.75% / 20.3125% are exactly the header buttons' grid spans
+  // (cols 28..39, 39..51, 51..64 of 64). Grid columns and percentage basis are
+  // both fractions of the widget width, so cells stay under their header
+  // buttons at any viewport width — a fixed `px` basis would only line up at
+  // one width. There is no row `gap`: padding inside the cells replaces it,
+  // because a fixed gap would drift the boundaries off the grid lines as the
+  // viewport resizes. `width:auto` neutralises the `.sc-... div { width:100% }`
+  // rule the Text widget injects, which would otherwise make the first cell
+  // claim the whole row. line-height is pinned so the row height, and therefore
+  // the fixed widget height in List_Mobile.json, stays predictable.
   getHoldingsHtml() {
     const esc = (v) =>
       String(v === undefined || v === null ? '' : v)
@@ -101,21 +114,18 @@ export default {
         .split('<').join('&lt;')
         .split('>').join('&gt;');
 
-    const list = GetHoldings.data || [];
+    const mode = this.getSortMode();
+    const key = mode === 'overall' ? 'unrealizedPnLPct' : 'dayChangePct';
+    const list = (GetHoldings.data || []).slice();
+    list.sort((a, b) => {
+      const d = (Number(a[key]) || 0) - (Number(b[key]) || 0);
+      if (d !== 0) return d;
+      return String(a.symbol || '').localeCompare(String(b.symbol || ''));
+    });
 
-    const CELL = 'width:auto;text-align:right;white-space:nowrap;overflow:hidden;';
+    const CELL = 'width:auto;text-align:right;white-space:nowrap;overflow:hidden;padding-right:10px;';
 
-    let html =
-      '<div style="width:100%;font-family:inherit;">' +
-      '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
-      'padding:0 2px 4px;border-bottom:1px solid #E2E8F0;color:#94A3B8;' +
-      'font-size:0.68rem;font-weight:600;letter-spacing:.04em;' +
-      'text-transform:uppercase;line-height:1.15;">' +
-      '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">Holding</div>' +
-      '<div style="flex:0 0 68px;' + CELL + '">Price</div>' +
-      '<div style="flex:0 0 74px;' + CELL + '">24h</div>' +
-      '<div style="flex:0 0 78px;' + CELL + '">Value</div>' +
-      '</div>';
+    let html = '<div style="width:100%;font-family:inherit;">';
 
     for (let i = 0; i < list.length; i++) {
       const h = list[i];
@@ -132,9 +142,9 @@ export default {
       const pnlPctText = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(2) + '%';
 
       html +=
-        '<div style="display:flex;align-items:center;gap:6px;width:100%;' +
-        'padding:3px 2px;border-bottom:1px solid #F1F5F9;line-height:1.15;">' +
-        '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;">' +
+        '<div style="display:flex;align-items:center;width:100%;' +
+        'padding:3px 0;border-bottom:1px solid #F1F5F9;line-height:1.15;">' +
+        '<div style="flex:1 1 auto;min-width:0;width:auto;overflow:hidden;padding-left:10px;">' +
         '<div style="font-weight:600;font-size:0.8rem;color:#0F172A;' +
         'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
         esc(h.symbol || '') +
@@ -144,7 +154,7 @@ export default {
         esc(h.name || '') +
         '</div>' +
         '</div>' +
-        '<div style="flex:0 0 68px;' + CELL + '">' +
+        '<div style="flex:0 0 17.1875%;' + CELL + '">' +
         '<div style="font-size:0.72rem;color:#334155;">' +
         esc(this.formatCurrency(h.currentPrice)) +
         '</div>' +
@@ -152,7 +162,7 @@ export default {
         esc(qtyText) +
         '</div>' +
         '</div>' +
-        '<div style="flex:0 0 74px;' + CELL + '">' +
+        '<div style="flex:0 0 18.75%;' + CELL + '">' +
         '<div style="font-weight:600;font-size:0.76rem;color:' +
         color +
         ';">' +
@@ -164,7 +174,7 @@ export default {
         pctText +
         '</div>' +
         '</div>' +
-        '<div style="flex:0 0 78px;' + CELL + '">' +
+        '<div style="flex:0 0 20.3125%;' + CELL + '">' +
         '<div style="font-weight:600;font-size:0.76rem;color:#0F172A;">' +
         esc(this.formatCurrency(h.currentValue)) +
         '</div>' +
@@ -179,5 +189,39 @@ export default {
 
     html += '</div>';
     return html;
+  },
+
+  // ---- header-row sort --------------------------------------------------
+  // 'today' sorts by today's gain/loss % (dayChangePct, worst first — the
+  // order GetHoldings itself returns); 'overall' by the total unrealized %
+  // gain/loss, same direction. Stored in appsmith.store so both the HdrSort_*
+  // labels and this list re-evaluate when it changes; before the first tap
+  // there is no stored value and the mode defaults to 'today', i.e. the view
+  // everyone is used to.
+  getSortMode() {
+    return (typeof appsmith !== 'undefined' && appsmith.store &&
+      appsmith.store.mobileSortMode === 'overall') ? 'overall' : 'today';
+  },
+
+  // Invoked by every HdrSort_* header button. storeValue pushes the new mode
+  // to appsmith.store (dependents re-evaluate); the GetHoldings re-run is a
+  // second, already-proven re-render trigger — the refresh button uses it and
+  // the list follows.
+  toggleSort() {
+    const next = this.getSortMode() === 'overall' ? 'today' : 'overall';
+    storeValue('mobileSortMode', next, false);
+    GetHoldings.run();
+  },
+
+  // Label for one header cell; the column currently driving the sort carries
+  // a ▲ marker. which: 'holding' | 'price' | '24h' | 'value'.
+  sortHdrLabel(which) {
+    if (which === 'holding') return 'HOLDING';
+    if (which === 'price') return 'PRICE';
+    const active = which === '24h'
+      ? this.getSortMode() !== 'overall'
+      : this.getSortMode() === 'overall';
+    const base = which === '24h' ? '24H' : 'VALUE';
+    return active ? base + ' ▲' : base;
   }
 }

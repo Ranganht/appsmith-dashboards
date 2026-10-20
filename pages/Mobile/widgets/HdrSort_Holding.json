@@ -1,0 +1,44 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "buttonColor": "#94A3B8",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "fontSize": "0.68rem",
+  "fontStyle": "BOLD",
+  "iconName": "",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "hdrsortholding",
+  "leftColumn": 0,
+  "onClick": "{{ MobileUtils.toggleSort() }}",
+  "parentColumnSpace": 12.828125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 28,
+  "text": "{{ MobileUtils.sortHdrLabel('holding') }}",
+  "textAlign": "LEFT",
+  "tooltipText": "Tap to sort by today's % or overall % gain/loss",
+  "topRow": 11,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "hdrbtn_holding",
+  "widgetName": "HdrSort_Holding"
+}
